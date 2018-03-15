@@ -13,7 +13,12 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => 'EduSpring',
+    'location' => 'Port Harcourt',
+    'number' => '07037287360',
+    'number2' => '07037287360',
+    'email' => 'info@eduspring.com',
+    'founder' => 'Austine Clark',
 
     /*
     |--------------------------------------------------------------------------
