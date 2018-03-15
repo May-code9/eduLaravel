@@ -12,14 +12,14 @@ Login | Sign Up
     <div class="shell">
       <div class="range range-xs-center section-34">
         <div class="cell-xs-8 cell-sm-6 cell-md-4">
-          <h2 class="text-bold">Login | Sign Up</h2>
+          <h2 class="text-bold">{{ __('Login') }} | Sign Up</h2>
           <hr class="divider bg-madison">
           <div class="offset-sm-top-45 text-center">
             <!-- Responsive-tabs-->
             <div data-type="horizontal" class="responsive-tabs responsive-tabs-classic horizontal">
               <ul data-group="tabs-group-default" class="resp-tabs-list tabs-1 text-center tabs-group-default">
-                <li>Login</li>
-                <li>Registration</li>
+                <li>{{ __('Login') }}</li>
+                <li>{{ __('Registration') }}</li>
               </ul>
               <div data-group="tabs-group-default" class="resp-tabs-container text-sm-left tabs-group-default">
                 <div>

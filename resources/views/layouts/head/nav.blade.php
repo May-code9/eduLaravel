@@ -78,7 +78,7 @@
       <!-- <li><a href="{{ route('edu_contact') }}">Contacts</a>
       </li>-->
       @if(Auth::guest())
-      <li class="">
+      <li class="@if(isset($loginActive)) {{ $loginActive }} @endif">
         <a href="{{ route('login') }}">Login | Sign Up</a>
       </li>
       @elseif(Auth::user()->role == 4)
@@ -95,14 +95,18 @@
       </li>
       @else
       <li class="">
-        <a href="{{route('logout')}}"
-        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ Auth::user()->first_name }} | Log Out</a>
-        <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
-          {{ csrf_field() }}
-        </form>
+        <a href="">{{ Auth::user()->first_name }}</a>
+        <ul class="rd-navbar-dropdown">
+          <li><a href="{{route('logout')}}"
+          onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+          <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+          </form>
+          </li>
+        </ul>
       </li>
       @endif
-      <li class="veil-lg"><a href="shopping-cart.php">Shopping Cart (2)</a></li>
+      <!-- <li class="veil-lg"><a href="shopping-cart.php">Shopping Cart (2)</a></li> -->
     </ul>
     <!--RD Navbar Mobile Search-->
     <div id="rd-navbar-search-mobile" class="rd-navbar-search-mobile">
@@ -118,4 +122,4 @@
 </div>
 
 <!--RD Navbar shop-->
-<div class="rd-navbar-cart"><span class="icon fa-shopping-cart"></span><a href="shopping-cart.php" class="inset-left-10">2</a></div>
+<!-- <div class="rd-navbar-cart"><span class="icon fa-shopping-cart"></span><a href="shopping-cart.php" class="inset-left-10">2</a></div> -->

@@ -12,23 +12,26 @@
     <div data-height="47.179%" data-loop="true" data-dragable="false" data-min-height="480px" data-slide-effect="true" class="swiper-container swiper-slider">
       <div class="swiper-wrapper">
         <div data-slide-bg="images/slide-01-1920x810.jpg" style="background-position: 80% center" class="swiper-slide">
-          <!-- <div class="swiper-slide-caption">
+          <div class="swiper-slide-caption">
             <div class="container">
-              <div class="range range-xs-center">
-                <div class="cell-md-9 text-center cell-xs-10">
-                  <div data-caption-animate="fadeInUp" data-caption-delay="100">
+              <div class="range range-xs-left">
+                <div class="cell-md-8 cell-xs-12 cell-sm-12">
+                  <!-- <div data-caption-animate="fadeInUp" data-caption-delay="100">
                     <h1 class="text-bold">Studying science from a new angle.</h1>
-                  </div>
+                  </div> -->
                   <div data-caption-animate="fadeInUp" data-caption-delay="150" class="offset-top-20 offset-xs-top-40 offset-xl-top-60 inset-lg-right-100">
-                    <h5>At {{ config('app.name') }}, you will have amazing opportunities to explore modern science through studying it in the friendly and professional environment using modern equipment and resources.</h5>
+                    <h3>“ The reason for education is to bring light to the inner gifts in men so that they shine bright with their creativity, innovations, visions, and abilities. ”</h3>
                   </div>
-                  <div data-caption-animate="fadeInUp" data-caption-delay="400" class="offset-top-20 offset-xl-top-40"><a href="login-register.php" class="btn btn-primary">Sign Up for Excursion</a>
-                    <div class="inset-xs-left-30 reveal-lg-inline-block"><a href="academic.php" class="btn btn-default veil reveal-lg-inline-block">Learn More</a></div>
+                  <div data-caption-animate="fadeInUp" data-caption-delay="400" class="offset-top-20 offset-xl-top-40">
+                    <a href="{{ route('login') }}" class="btn btn-primary">Sign Up for Excursion</a>
+                    <div class="inset-xs-left-30 reveal-lg-inline-block">
+                      <a href="academic.php" class="btn btn-default veil reveal-lg-inline-block">Learn More</a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
         </div>
         <div data-slide-bg="images/slide-02-1920x810.jpg" style="background-position: 80% center" class="swiper-slide">
           <!-- <div class="swiper-slide-caption">
@@ -185,7 +188,7 @@
             </div>
           </article>
         </div>
-      </div> 
+      </div>
     </div>
   </section>
    <!-- Events-->
@@ -198,7 +201,8 @@
         <span>View Classroom</span>
       </a>
     </div>
-      <!-- <div class="range offset-top-20 range-xs-center">
+
+    <div class="range offset-top-20 range-xs-center">
         <div class="cell-sm-6 cell-md-3">
           <article class="post-event">
             <div class="post-event-img-overlay">
@@ -209,9 +213,9 @@
             </div>
             <div class="unit unit-lg">
               <div class="unit-left">
-                <div class="post-event-meta text-center">
-                  <div class="h3 text-bold reveal-inline-block reveal-lg-block">31</div>
-                  <p class="reveal-inline-block reveal-lg-block">September</p><span class="text-bold reveal-inline-block reveal-lg-block inset-left-10 inset-lg-left-0">5:00pm</span>
+                <div class="post-event-meta text-center remove-side-box">
+                  <div class="h3 text-bold reveal-inline-block reveal-lg-block trans-text">00</div>
+                  <p class="reveal-inline-block reveal-lg-block trans-text">00000000</p><span class="text-bold reveal-inline-block reveal-lg-block inset-left-10 inset-lg-left-0 trans-text">0000</span>
                 </div>
               </div>
               <div class="unit-body downchange">
@@ -225,25 +229,26 @@
             </div>
           </article>
         </div>
-        <div class="cell-sm-6 cell-md-3 offset-top-50 offset-sm-top-0">
+        <div class="cell-sm-6 cell-md-3 offset-top-50 offset-md-top-0">
           <article class="post-event">
-            <div class="post-event-img-overlay"><img src="images/blog/events-02-420x420.jpg" width="420" height="420" alt="" class="img-responsive">
+            <div class="post-event-img-overlay">
+              <img src="images/blog/events-01-420x420.jpg" width="420" height="420" alt="" class="img-responsive">
               <div class="post-event-overlay context-dark"><a href="apply.php" class="btn btn-primary btn-sm">Book Now</a>
                 <div class="offset-top-20"><a href="event-page.php" class="btn btn-default btn-sm">Learn More</a></div>
               </div>
             </div>
             <div class="unit unit-lg">
               <div class="unit-left">
-                <div class="post-event-meta text-center">
-                  <div class="h3 text-bold reveal-inline-block reveal-lg-block">5</div>
-                  <p class="reveal-inline-block reveal-lg-block">July</p><span class="text-bold reveal-inline-block reveal-lg-block inset-left-10 inset-lg-left-0">5:00pm</span>
+                <div class="post-event-meta text-center remove-side-box">
+                  <div class="h3 text-bold reveal-inline-block reveal-lg-block trans-text">00</div>
+                  <p class="reveal-inline-block reveal-lg-block trans-text">00000000</p><span class="text-bold reveal-inline-block reveal-lg-block inset-left-10 inset-lg-left-0 trans-text">0000</span>
                 </div>
               </div>
               <div class="unit-body downchange">
                 <div class="post-event-body text-lg-left">
-                  <h6><a href="event-page.php">International Conference on Biomolecular Engineering</a></h6>
+                  <h6><a href="event-page.php">Spacewalking Conference</a></h6>
                   <ul class="list-inline list-inline-xs">
-                    <li><a href="team-member-profile.php"><span class="icon icon-xxs mdi mdi-account-outline text-middle"></span><span class="inset-left-10 text-dark text-middle">Raymond Salazar</span></a></li>
+                    <li><a href="team-member-profile.php"><span class="icon icon-xxs mdi mdi-account-outline text-middle"></span><span class="inset-left-10 text-dark text-middle">Walter Stanley</span></a></li>
                   </ul>
                 </div>
               </div>
@@ -252,23 +257,24 @@
         </div>
         <div class="cell-sm-6 cell-md-3 offset-top-50 offset-md-top-0">
           <article class="post-event">
-            <div class="post-event-img-overlay"><img src="images/blog/events-03-420x420.jpg" width="420" height="420" alt="" class="img-responsive">
+            <div class="post-event-img-overlay">
+              <img src="images/blog/events-01-420x420.jpg" width="420" height="420" alt="" class="img-responsive">
               <div class="post-event-overlay context-dark"><a href="apply.php" class="btn btn-primary btn-sm">Book Now</a>
                 <div class="offset-top-20"><a href="event-page.php" class="btn btn-default btn-sm">Learn More</a></div>
               </div>
             </div>
             <div class="unit unit-lg">
               <div class="unit-left">
-                <div class="post-event-meta text-center">
-                  <div class="h3 text-bold reveal-inline-block reveal-lg-block">15</div>
-                  <p class="reveal-inline-block reveal-lg-block">June</p><span class="text-bold reveal-inline-block reveal-lg-block inset-left-10 inset-lg-left-0">5:00pm</span>
+                <div class="post-event-meta text-center remove-side-box">
+                  <div class="h3 text-bold reveal-inline-block reveal-lg-block trans-text">00</div>
+                  <p class="reveal-inline-block reveal-lg-block trans-text">00000000</p><span class="text-bold reveal-inline-block reveal-lg-block inset-left-10 inset-lg-left-0 trans-text">0000</span>
                 </div>
               </div>
               <div class="unit-body downchange">
                 <div class="post-event-body text-lg-left">
-                  <h6><a href="event-page.php">Graphic Design Workshop</a></h6>
+                  <h6><a href="event-page.php">Spacewalking Conference</a></h6>
                   <ul class="list-inline list-inline-xs">
-                    <li><a href="team-member-profile.php"><span class="icon icon-xxs mdi mdi-account-outline text-middle"></span><span class="inset-left-10 text-dark text-middle">Bruce Hawkins</span></a></li>
+                    <li><a href="team-member-profile.php"><span class="icon icon-xxs mdi mdi-account-outline text-middle"></span><span class="inset-left-10 text-dark text-middle">Walter Stanley</span></a></li>
                   </ul>
                 </div>
               </div>
@@ -277,30 +283,31 @@
         </div>
         <div class="cell-sm-6 cell-md-3 offset-top-50 offset-md-top-0">
           <article class="post-event">
-            <div class="post-event-img-overlay"><img src="images/blog/events-03-420x420.jpg" width="420" height="420" alt="" class="img-responsive">
+            <div class="post-event-img-overlay">
+              <img src="images/blog/events-01-420x420.jpg" width="420" height="420" alt="" class="img-responsive">
               <div class="post-event-overlay context-dark"><a href="apply.php" class="btn btn-primary btn-sm">Book Now</a>
                 <div class="offset-top-20"><a href="event-page.php" class="btn btn-default btn-sm">Learn More</a></div>
               </div>
             </div>
             <div class="unit unit-lg">
               <div class="unit-left">
-                <div class="post-event-meta text-center">
-                  <div class="h3 text-bold reveal-inline-block reveal-lg-block">15</div>
-                  <p class="reveal-inline-block reveal-lg-block">June</p><span class="text-bold reveal-inline-block reveal-lg-block inset-left-10 inset-lg-left-0">5:00pm</span>
+                <div class="post-event-meta text-center remove-side-box">
+                  <div class="h3 text-bold reveal-inline-block reveal-lg-block trans-text">00</div>
+                  <p class="reveal-inline-block reveal-lg-block trans-text">00000000</p><span class="text-bold reveal-inline-block reveal-lg-block inset-left-10 inset-lg-left-0 trans-text">0000</span>
                 </div>
               </div>
               <div class="unit-body downchange">
                 <div class="post-event-body text-lg-left">
-                  <h6><a href="event-page.php">Graphic Design Workshop</a></h6>
+                  <h6><a href="event-page.php">Spacewalking Conference</a></h6>
                   <ul class="list-inline list-inline-xs">
-                    <li><a href="team-member-profile.php"><span class="icon icon-xxs mdi mdi-account-outline text-middle"></span><span class="inset-left-10 text-dark text-middle">Bruce Hawkins</span></a></li>
+                    <li><a href="team-member-profile.php"><span class="icon icon-xxs mdi mdi-account-outline text-middle"></span><span class="inset-left-10 text-dark text-middle">Walter Stanley</span></a></li>
                   </ul>
                 </div>
               </div>
             </div>
           </article>
         </div>
-      </div> -->
+      </div>
 
     </div>
   </section>
@@ -319,7 +326,7 @@
   </section>
   <!-- Latest news-->
   <section class="bg-catskill">
-    <div class="shell section-100 section-md-100">
+    <div class="shell section-100 section-md-50">
       <h2 class="text-bold">Latest News</h2>
       <div class="offset-top-10 offset-bottom-10" style="text-align: right;">
         <a href="{{ route('edu_school') }}" class="btn btn-madison btn-sm">
@@ -327,8 +334,8 @@
       </a>
     </div>
       <!-- <hr class="divider bg-madison"> -->
-      <!-- <div class="range offset-top-60 text-left range-xs-center">
-        <div class="cell-sm-6 cell-md-4">
+      <div class="range offset-top-60 text-left range-xs-center">
+        <div class="cell-sm-6 cell-md-4 zoom">
           <article class="post-news"><a href="news-post-page.php"><img src="images/blog/news-01-370x240.jpg" width="370" height="240" alt="" class="img-responsive"></a>
             <div class="post-news-body">
               <h6><a href="news-post-page.php">Liberal Arts Colleges Rankings</a></h6>
@@ -339,7 +346,7 @@
             </div>
           </article>
         </div>
-        <div class="cell-sm-6 cell-md-4 offset-top-30 offset-sm-top-0">
+        <div class="cell-sm-6 cell-md-4 offset-top-30 offset-sm-top-0 zoom">
           <article class="post-news"><a href="news-post-page.php"><img src="images/blog/news-02-370x240.jpg" width="370" height="240" alt="" class="img-responsive"></a>
             <div class="post-news-body">
               <h6><a href="news-post-page.php">10 Law Schools Where the Most Accepted Students Enroll</a></h6>
@@ -350,7 +357,7 @@
             </div>
           </article>
         </div>
-        <div class="cell-sm-6 cell-md-4 offset-top-30 offset-md-top-0">
+        <div class="cell-sm-6 cell-md-4 offset-top-30 offset-md-top-0 zoom">
           <article class="post-news"><a href="news-post-page.php"><img src="images/blog/news-03-370x240.jpg" width="370" height="240" alt="" class="img-responsive"></a>
             <div class="post-news-body">
               <h6><a href="news-post-page.php">5 Ways to Pay for Community College</a></h6>
@@ -361,7 +368,7 @@
             </div>
           </article>
         </div>
-      </div> -->
+      </div>
 
     </div>
   </section>
@@ -371,8 +378,9 @@
       <div class="range range-xs-center range-sm-left offset-top-0">
         <div class="cell-xs-10 cell-sm-7 cell-lg-6 section-image-aside section-image-aside-right text-sm-left">
           <div style="background-image: url(images/home-01-846x1002.jpg)" class="section-image-aside-img veil reveal-sm-block"></div>
-          <div class="section-image-aside-body section-70 section-md-114 inset-sm-right-70 inset-lg-right-110">
-            <h2 class="text-bold">What People Say</h2>
+          <div class="section-image-aside-body section-70 section-md-50 inset-sm-right-70 inset-lg-right-110">
+            <h2 class="text-bold">Connect</h2>
+            <h3>with a network of People in our community passionate about Education</h3>
             <hr class="divider bg-madison hr-sm-left-0">
             <div data-items="1" data-sm-margin="10" data-nav="false" data-dots="true" data-nav-class="[&quot;owl-prev fa-angle-left&quot;, &quot;owl-next fa-angle-right&quot;]" class="owl-carousel owl-carousel-default offset-top-30 offset-md-top-50">
               <!-- <div>
