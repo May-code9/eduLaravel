@@ -82,7 +82,7 @@
       <h2 class="text-bold" style="margin-bottom: 15px">Top from Institutions</h2>
       <!-- <hr class="divider bg-madison"> -->
       <div class="offset-top-10 offset-bottom-10" style="text-align: right">
-        <a href="{{ route('edu_school') }}" class="btn btn-madison btn-sm">
+        <a href="{{ route('edu_classroom') }}" class="btn btn-madison btn-sm">
         <span>View Institution</span>
       </a>
     </div>
@@ -197,7 +197,7 @@
       <h2 class="text-bold" style="margin-bottom: 15px">Top from Classroom</h2>
       <!-- <hr class="divider bg-madison"> -->
       <div class="offset-top-10" style="text-align: right; margin-bottom: 50px">
-        <a href="{{ route('edu_school') }}" class="btn btn-madison btn-sm">
+        <a href="{{ route('edu_classroom') }}" class="btn btn-madison btn-sm">
         <span>View Classroom</span>
       </a>
     </div>
@@ -326,15 +326,15 @@
   </section>
   <!-- Latest news-->
   <section class="bg-catskill">
-    <div class="shell section-100 section-md-50">
+    <div class="shell section-100 section-md-40">
       <h2 class="text-bold">Latest News</h2>
       <div class="offset-top-10 offset-bottom-10" style="text-align: right;">
-        <a href="{{ route('edu_school') }}" class="btn btn-madison btn-sm">
+        <a href="{{ route('edu_classroom') }}" class="btn btn-madison btn-sm">
         <span>View All Posts</span>
       </a>
     </div>
       <!-- <hr class="divider bg-madison"> -->
-      <div class="range offset-top-60 text-left range-xs-center">
+      <div class="range offset-top-40 text-left range-xs-center">
         <div class="cell-sm-6 cell-md-4 zoom">
           <article class="post-news"><a href="news-post-page.php"><img src="images/blog/news-01-370x240.jpg" width="370" height="240" alt="" class="img-responsive"></a>
             <div class="post-news-body">
@@ -439,7 +439,7 @@
         <div class="cell-sm-6 cell-md-3">
           <!-- Counter type 1-->
           <div class="counter-type-1"><span class="icon icon-sm text-madison mdi fa-university"></span>
-            <div class="h3 text-bold text-primary offset-top-15"><span data-speed="1300" data-from="0" data-to="97" class="counter"></span><span>%</span></div>
+            <div class="h3 text-bold text-primary offset-top-15"><span data-speed="1300" data-from="0" data-to="10000" class="counter"></span><span>+</span></div>
             <hr class="divider bg-gray-light divider-sm"/>
             <div class="offset-top-10">
               <h6 class="text-black font-accent">Institutions</h6>
@@ -449,7 +449,7 @@
         <div class="cell-sm-6 cell-md-3 offset-top-65 offset-sm-top-0">
           <!-- Counter type 1-->
           <div class="counter-type-1"><span class="icon icon-sm text-madison mdi fa-briefcase"></span>
-            <div class="h3 text-bold text-primary offset-top-15"><span data-speed="1250" data-from="0" data-to="30" class="counter"></span><span>+</span></div>
+            <div class="h3 text-bold text-primary offset-top-15"><span data-speed="1250" data-from="0" data-to="8000" class="counter"></span><span>+</span></div>
             <hr class="divider bg-gray-light divider-sm"/>
             <div class="offset-top-10">
               <h6 class="text-black font-accent">Parents/Guardians</h6>
@@ -459,7 +459,7 @@
         <div class="cell-sm-6 cell-md-3 offset-top-65 offset-md-top-0">
           <!-- Counter type 1-->
           <div class="counter-type-1"><span class="icon icon-sm text-madison mdi fa-graduation-cap"></span>
-            <div class="h3 text-bold text-primary offset-top-15"><span data-step="1500" data-from="0" data-to="8" class="counter"></span></div>
+            <div class="h3 text-bold text-primary offset-top-15"><span data-step="1500" data-from="0" data-to="25000" class="counter"></span></div>
             <hr class="divider bg-gray-light divider-sm"/>
             <div class="offset-top-10">
               <h6 class="text-black font-accent">Students</h6>
@@ -469,7 +469,7 @@
         <div class="cell-sm-6 cell-md-3 offset-top-65 offset-md-top-0">
           <!-- Counter type 1-->
           <div class="counter-type-1"><span class="icon icon-sm text-madison mdi fa-users"></span>
-            <div class="h3 text-bold text-primary offset-top-15"><span data-step="500" data-from="0" data-to="6510" class="counter"></span></div>
+            <div class="h3 text-bold text-primary offset-top-15"><span data-step="500" data-from="0" data-to="15000" class="counter"></span></div>
             <hr class="divider bg-gray-light divider-sm"/>
             <div class="offset-top-10">
               <h6 class="text-black font-accent">Educational Worker</h6>

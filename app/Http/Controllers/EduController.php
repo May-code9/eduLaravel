@@ -18,9 +18,9 @@ class EduController extends Controller
 
       return view('public.iSchool');
     }
-    public function school() {
-      $schoolActive = "active";
-      return view('public.school', compact('schoolActive'));
+    public function classroom() {
+      $classroomActive = "active";
+      return view('public.classroom', compact('classroomActive'));
     }
     public function contact() {
       $contactActive = "active";

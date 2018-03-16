@@ -27,10 +27,10 @@
       <li class="@if(isset($aboutActive)) {{$aboutActive}} @endif">
         <a href="#">Institutions</a>
       </li>
-      <li class="@if(isset($schoolActive)) {{$schoolActive}} @endif">
-        <a href="#">Classroom</a>
+      <li class="@if(isset($classroomActive)) {{$classroomActive}} @endif">
+        <a href="{{ route('edu_classroom') }}">Classroom</a>
       </li>
-      <li class="@if(isset($schoolActive)) {{$schoolActive}} @endif">
+      <li class="">
         <a href="#">Community</a>
       </li>
       <!-- <li><a href="#">News</a>
