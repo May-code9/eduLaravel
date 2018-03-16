@@ -6,7 +6,7 @@ Login | Sign Up
 
 @section('content')
 
-<main class="page-content section-70 section-md-114">
+<main class="page-content section-70 section-md-70">
   <!--Section Login Register-->
   <section class="section-98 section-sm-110 section-bottom-66">
     <div class="shell">

@@ -14,7 +14,7 @@
       <div class="cell-xs-10 cell-md-5 cell-lg-2 text-lg-left offset-top-50 offset-md-top-0">
 
       </div>
-      <div class="cell-xs-10 cell-md-5 cell-lg-2 text-lg-left offset-top-50 offset-md-top-0">
+      <div class="cell-xs-5 cell-md-5 cell-lg-2 text-lg-left offset-top-50 offset-md-top-0">
         <div class="text-subline"></div>
         <div class="offset-top-30">
           <ul class="list-unstyled contact-info list">
@@ -35,7 +35,7 @@
           </ul>
         </div>
       </div>
-      <div class="cell-xs-10 cell-md-5 cell-lg-2 text-lg-left offset-top-50 offset-md-top-0">
+      <div class="cell-xs-5 cell-md-5 cell-lg-2 text-lg-left offset-top-50 offset-md-top-0">
         <div class="text-subline"></div>
         <div class="offset-top-30">
           <ul class="list-unstyled contact-info list">
@@ -54,7 +54,7 @@
           </ul>
         </div>
       </div>
-      <div class="cell-xs-10 cell-md-5 cell-lg-2 text-lg-left offset-top-50 offset-md-top-0">
+      <div class="cell-xs-5 cell-md-5 cell-lg-2 text-lg-left offset-top-50 offset-md-top-0">
         <div class="text-subline"></div>
         <div class="offset-top-30">
           <ul class="list-unstyled contact-info list">
@@ -73,7 +73,7 @@
           </ul>
         </div>
       </div>
-      <div class="cell-xs-10 cell-md-5 cell-lg-2 text-lg-left offset-top-50 offset-md-top-0">
+      <div class="cell-xs-5 cell-md-5 cell-lg-2 text-lg-left offset-top-50 offset-md-top-0">
         <div class="text-subline"></div>
         <div class="offset-top-30">
           <ul class="list-unstyled contact-info list">
@@ -97,10 +97,10 @@
   <div class="bg-madison context-dark">
     <div class="shell section-15 section-md-25">
       <div class="range text-left range-xs-center">
-        <div class="cell-md-7 offset-top-15">
-          <p>Copyright &copy; <span id="copyright-year"></span> <a href="#" style="color: black">MyEduSpring</a> | Design by <a href="#" style="color: black">Code9ners</a></p>
+        <div class="cell-md-6 cell-xs-6 coffset-top-15">
+          <p>Copyright &copy; <span id="copyright-year"></span> <a href="#" style="color: black">MyEduSpring</a> <br/> Design by <a href="#" style="color: black">Code9ners</a></p>
         </div>
-        <div class="cell-md-5" style="margin-top: -10px;">
+        <div class="cell-md-6 cell-xs-6 offset-top-15" style="margin-top: -10px;">
           <ul class="list-inline list-inline-xs list-inline-madison" style="text-align: right;">
                 <li>
                   <a href="#" class="icon icon-xxs fa-facebook icon-circle icon-gray-light-filled"></a>

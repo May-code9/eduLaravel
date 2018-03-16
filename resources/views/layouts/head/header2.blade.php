@@ -55,14 +55,14 @@
           </div>
           <div class="rd-navbar-menu-wrap clearfix">
             <!--Navbar Brand-->
-            <div class="rd-navbar-brand">
+            <div class="rd-navbar-brand" style="float: left">
               <a href="{{ route('edu_home') }}" class="reveal-inline-block">
-                <div class="unit unit-xs-middle unit-xl unit-xl-horizontal unit-spacing-xxs">
+                <div class="unit unit-xs-middle unit-lg unit-lg-horizontal unit-spacing-xxs">
                   <div class="unit-left">
                     <img width='120' height='130' src='images/Logo-black.png' alt=''/>
                   </div>
-                  <div class="unit-body text-xl-left">
-                    <div class="rd-navbar-brand-title">{{ config('app.name') }}</div>
+                  <div class="unit-body text-lg-left">
+                    <div class="rd-navbar-brand-title" style="font-size:42px; color:#a81a1a;margin-top: 23px;">{{ config('app.name') }}</div>
                     <div class="rd-navbar-brand-slogan"></div>
                   </div>
                 </div>
@@ -75,10 +75,10 @@
     </div>
   </header>
 
-  <section class="breadcrumb-classic context-dark" style="background: #7f0909;">
-    <div class="shell section-30 section-sm-top-70 section-sm-bottom-60">
-      <h1 class="veil reveal-sm-block">@yield('title')</h1>
-      <div class="offset-sm-top-35">
+  <section class="breadcrumb-classic context-dark" style="background: #442b2b;">
+    <div class="shell section-30">
+      <!-- <h1 class="veil reveal-sm-block">@yield('title')</h1> -->
+      <div class="">
         <ul class="list-inline list-inline-lg list-inline-dashed p">
           <li><a href="{{ route('edu_home') }}">Home</a></li>
           <li><a href="#">@yield('title')</a></li>

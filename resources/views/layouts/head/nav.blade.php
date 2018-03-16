@@ -1,5 +1,5 @@
 <!--RD Navbar Search-->
-<div class="rd-navbar-search" style="margin-left: 20px;    margin-right: 20px;width: 290px; ">
+<div class="rd-navbar-search" style="margin: 20px; width: 290px; ">
   <form action="#" method="GET" class="form-search rd-search">
     <div class="form-group">
       <label for="rd-navbar-search-form-input" class="form-label">Find Institutions</label>
