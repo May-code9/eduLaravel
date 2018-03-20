@@ -8,22 +8,17 @@ Recommended Courses
 <!-- Page Content-->
 <main class="page-content cell-md-12">
   <section class="range">
-    <div class="cell-md-3 border-shadow" style="float:left; background-color: #f8f8f8">
+    <div class="cell-md-3 border-shadow" style="background-color: #f8f8f8">
       <div class=" section-70 section-md-70" style="padding-top: 20px" >
         <h4 class="text-bold" style="margin-bottom: 15px">Classroom Categories</h4>
         <div class="text-subline"></div>
-        
+
       </div>
     </div>
     <div class="cell-md-9">
-      <div class=" section-70 section-md-70" style="padding-top: 20px" >
-        <h3 class="text-bold" style="margin-bottom: 15px; float: left; padding-left: 20px">Read Articles</h3>
+      <div class=" section-30 section-bottom-10">
+        <h3 class="text-bold" style="margin-bottom: 15px; text-align: left; padding-left: 20px">Read Articles</h3>
         <!-- <hr class="divider bg-madison"> -->
-        <div class="offset-top-10" style="text-align: right; margin-bottom: 50px">
-          <a href="{{ route('edu_courses') }}" class="btn btn-madison btn-sm">
-            <span>View Classroom</span>
-          </a>
-        </div>
 
         <div class="range offset-top-20 range-xs-center">
           <div class="cell-sm-6 cell-md-4">
@@ -105,18 +100,18 @@ Recommended Courses
             </article>
           </div>
         </div>
-      </div>
-
-      <hr class="divider bg-madison">
-
-      <div class=" section-70 section-md-70" style="padding-top: 20px" >
-        <h3 class="text-bold" style="margin-bottom: 15px; float: left; padding-left: 20px">Take Courses</h3>
-        <!-- <hr class="divider bg-madison"> -->
-        <div class="offset-top-10" style="text-align: right; margin-bottom: 50px">
+        <div class="offset-top-20" style="text-align: right;">
           <a href="{{ route('edu_courses') }}" class="btn btn-madison btn-sm">
-            <span>View Classroom</span>
+            <span>Read More</span>
           </a>
         </div>
+      </div>
+
+      <hr>
+
+      <div class=" section-20 section-bottom-30" >
+        <h3 class="text-bold" style="margin-bottom: 15px; text-align: left; padding-left: 20px">Take Courses</h3>
+        <!-- <hr class="divider bg-madison"> -->
 
         <div class="range offset-top-20 range-xs-center">
           <div class="cell-sm-6 cell-md-4">
@@ -251,6 +246,11 @@ Recommended Courses
           </div>
         </div>
 
+        <div class="offset-top-20" style="text-align: right">
+          <a href="{{ route('edu_courses') }}" class="btn btn-madison btn-sm">
+            <span>Read More</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>

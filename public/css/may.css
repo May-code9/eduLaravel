@@ -23,3 +23,15 @@
 .border-shadow-red {
   box-shadow: 0 4px 8px 0 rgba(188, 155, 155, 0.2);
 }
+
+.block-list {
+  list-style: block!important;
+}
+
+.block-display {
+  display: block!important;
+}
+
+.section-bottom-10 {
+  padding-bottom: 10px;
+}
