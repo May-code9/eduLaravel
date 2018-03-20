@@ -15,7 +15,7 @@ Auth::routes();
 
 Route::get('/', ['as'=>'edu_home', 'uses'=>'EduController@index']);
 Route::get('/about', ['as'=>'edu_about', 'uses'=>'EduController@about']);
-Route::get('/iSchool', ['as'=>'edu_iSchool', 'uses'=>'EduController@iSchool']);
-Route::get('/classroom', ['as'=>'edu_classroom', 'uses'=>'EduController@classroom']);
+Route::get('/icourse', ['as'=>'edu_icourse', 'uses'=>'EduController@icourse']);
+Route::get('/courses', ['as'=>'edu_courses', 'uses'=>'EduController@courses']);
 Route::get('/contact', ['as'=>'edu_contact', 'uses'=>'EduController@contact']);
 Route::get('/comingSoon', ['as'=>'coming_soon', 'uses'=>'EduController@coming']);

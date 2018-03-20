@@ -81,7 +81,7 @@
       <div class="">
         <ul class="list-inline list-inline-lg list-inline-dashed p">
           <li><a href="{{ route('edu_home') }}">Home</a></li>
-          <li><a href="#">@yield('title')</a></li>
+          <li><a href="#" style="font-size:20px">@yield('title')</a></li>
         </ul>
       </div>
     </div>

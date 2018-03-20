@@ -15,7 +15,7 @@
       <!--Navbar Brand Mobile-->
       <div class="rd-navbar-mobile-brand">
         <a href="{{ route('edu_home') }}">
-          <img width='120' height='130' src='images/Logo-white.png' alt=''/>
+          <img width='120' height='130' src='images/Logo-black.png' alt=''/>
         </a>
       </div>
     </div>
@@ -27,8 +27,8 @@
       <li class="@if(isset($aboutActive)) {{$aboutActive}} @endif">
         <a href="#">Institutions</a>
       </li>
-      <li class="@if(isset($classroomActive)) {{$classroomActive}} @endif">
-        <a href="{{ route('edu_classroom') }}">Classroom</a>
+      <li class="@if(isset($coursesActive)) {{$coursesActive}} @endif">
+        <a href="{{ route('edu_courses') }}">Courses</a>
       </li>
       <li class="">
         <a href="#">Community</a>

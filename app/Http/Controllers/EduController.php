@@ -14,13 +14,13 @@ class EduController extends Controller
       $aboutActive = "active";
       return view('public.about', compact('aboutActive'));
     }
-    public function iSchool() {
-
-      return view('public.iSchool');
+    public function icourse() {
+      $coursesActive = "active";
+      return view('public.icourse', compact('coursesActive'));
     }
-    public function classroom() {
-      $classroomActive = "active";
-      return view('public.classroom', compact('classroomActive'));
+    public function courses() {
+      $coursesActive = "active";
+      return view('public.courses', compact('coursesActive'));
     }
     public function contact() {
       $contactActive = "active";
