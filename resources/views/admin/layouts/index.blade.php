@@ -50,7 +50,7 @@
                 ---
               </h3>
               <p>
-                Energy Projects
+                Users
               </p>
             </div>
             <div class="icon">
@@ -69,7 +69,7 @@
                 ---
               </h3>
               <p>
-                ICT Projects
+                Courses
               </p>
             </div>
             <div class="icon">
@@ -88,7 +88,7 @@
                 ---
               </h3>
               <p>
-                Engineering Projects
+                Course Contents
               </p>
             </div>
             <div class="icon">
@@ -107,7 +107,7 @@
                 ---
               </h3>
               <p>
-                News
+                Instructors
               </p>
             </div>
             <div class="icon">

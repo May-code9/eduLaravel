@@ -20,28 +20,47 @@
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
         </a>
       </li>
-      <li class="@if(isset($activeProduct)) {{ $activeProduct }} @endif">
+      <li class="treeview @if(isset($activeProject)) {{ $activeProject }} @endif">
         <a href="#">
-          <i class="fa fa-edit"></i> <span>Product</span>
+          <i class="fa fa-edit"></i> <span>Courses</span>
+          <i class="fa fa-angle-left pull-right"></i>
         </a>
+        <ul class="treeview-menu">
+          <li><a href="#"><i class="fa fa-angle-double-right"></i> Add</a></li>
+          <li><a href="#"><i class="fa fa-angle-double-right"></i> View</a></li>
+        </ul>
       </li>
 
       <li class="treeview @if(isset($activeProject)) {{ $activeProject }} @endif">
         <a href="#">
-          <i class="fa fa-edit"></i> <span>Projects</span>
+          <i class="fa fa-edit"></i> <span>Course Contents</span>
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-angle-double-right"></i> Energy</a></li>
-          <li><a href="#"><i class="fa fa-angle-double-right"></i> ICT</a></li>
-          <li><a href="#"><i class="fa fa-angle-double-right"></i> Engineering</a></li>
+          <li><a href="#"><i class="fa fa-angle-double-right"></i> Add</a></li>
+          <li><a href="#"><i class="fa fa-angle-double-right"></i> View</a></li>
         </ul>
       </li>
 
-      <li class="@if(isset($activeNews)) {{ $activeNews }} @endif">
+      <li class="treeview @if(isset($activeProject)) {{ $activeProject }} @endif">
         <a href="#">
-          <i class="fa fa-edit"></i> <span>News</span>
+          <i class="fa fa-edit"></i> <span>Instructors</span>
+          <i class="fa fa-angle-left pull-right"></i>
         </a>
+        <ul class="treeview-menu">
+          <li><a href="#"><i class="fa fa-angle-double-right"></i> Add</a></li>
+          <li><a href="#"><i class="fa fa-angle-double-right"></i> View</a></li>
+        </ul>
+      </li>
+      <li class="treeview @if(isset($activeProject)) {{ $activeProject }} @endif">
+        <a href="#">
+          <i class="fa fa-edit"></i> <span>Users</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="#"><i class="fa fa-angle-double-right"></i> Add</a></li>
+          <li><a href="#"><i class="fa fa-angle-double-right"></i> View</a></li>
+        </ul>
       </li>
 
       <!-- <li class="treeview">
