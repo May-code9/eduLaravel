@@ -85,7 +85,7 @@
       <li class="">
         <a href="#"> {{ Auth::user()->first_name }}</a>
         <ul class="rd-navbar-dropdown">
-          <li><a href="">Dashboard</a></li>
+          <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
           <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log Out</a>
           <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
             {{ csrf_field() }}

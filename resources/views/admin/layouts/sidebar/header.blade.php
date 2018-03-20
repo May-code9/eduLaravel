@@ -11,10 +11,10 @@
     <ul class="nav navbar-nav">
       <!-- Messages: style can be found in dropdown.less-->
       <li>
-        <a href="{{route('roncho_home')}}" class="btn btn-default btn-flat" style="padding-top: 14px;padding-bottom: 14px;">Home</a>
+        <a href="{{route('edu_home')}}" class="btn btn-default btn-flat" style="padding-top: 14px;padding-bottom: 14px;">Home</a>
       </li>
       <!-- Notifications: style can be found in dropdown.less -->
-    
+
       <!-- User Account: style can be found in dropdown.less -->
       <li class="dropdown user user-menu">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">

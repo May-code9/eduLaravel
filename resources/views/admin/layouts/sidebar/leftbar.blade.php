@@ -16,12 +16,12 @@
     <ul class="sidebar-menu">
       @if (Auth::user()->role > 2)
       <li class="@if(isset($activeDashboard)) {{ $activeDashboard }} @endif">
-        <a href="{{ route('ronchoDashboard') }}">
+        <a href="#">
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
         </a>
       </li>
       <li class="@if(isset($activeProduct)) {{ $activeProduct }} @endif">
-        <a href="{{ route('product.create') }}">
+        <a href="#">
           <i class="fa fa-edit"></i> <span>Product</span>
         </a>
       </li>
@@ -32,14 +32,14 @@
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="{{ route('energy.create') }}"><i class="fa fa-angle-double-right"></i> Energy</a></li>
-          <li><a href="{{ route('ict.create') }}"><i class="fa fa-angle-double-right"></i> ICT</a></li>
-          <li><a href="{{ route('engineering.create') }}"><i class="fa fa-angle-double-right"></i> Engineering</a></li>
+          <li><a href="#"><i class="fa fa-angle-double-right"></i> Energy</a></li>
+          <li><a href="#"><i class="fa fa-angle-double-right"></i> ICT</a></li>
+          <li><a href="#"><i class="fa fa-angle-double-right"></i> Engineering</a></li>
         </ul>
       </li>
 
       <li class="@if(isset($activeNews)) {{ $activeNews }} @endif">
-        <a href="{{ route('news.create') }}">
+        <a href="#">
           <i class="fa fa-edit"></i> <span>News</span>
         </a>
       </li>
@@ -55,13 +55,13 @@
         </ul>
       </li> -->
       <li class="@if(isset($activeMessage)) {{ $activeMessage }} @endif">
-        <a href="{{ route('message.index') }}">
+        <a href="#">
           <i class="fa fa-envelope"></i> <span>Mailbox</span>
           <!-- <small class="badge pull-right bg-yellow">12</small> -->
         </a>
       </li>
       <li class="@if(isset($activeRequest)) {{ $activeRequest }} @endif">
-        <a href="{{ route('requestform.index') }}">
+        <a href="#">
           <i class="fa fa-envelope"></i> <span>Requests</span>
           <!-- <small class="badge pull-right bg-yellow">12</small> -->
         </a>
@@ -76,8 +76,8 @@
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="{{ route('adminuser.index') }}"><i class="fa fa-angle-double-right"></i> View Admin</a></li>
-          <li><a href="{{ route('adminuser.create') }}"><i class="fa fa-angle-double-right"></i> Add Admin</a></li>
+          <li><a href="#"><i class="fa fa-angle-double-right"></i> View Admin</a></li>
+          <li><a href="#"><i class="fa fa-angle-double-right"></i> Add Admin</a></li>
         </ul>
       </li>
       @endif

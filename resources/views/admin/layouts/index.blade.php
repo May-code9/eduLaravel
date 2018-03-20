@@ -28,7 +28,7 @@
           <div class="small-box bg-aqua">
             <div class="inner">
               <h3>
-                {{ Auth::user()->id }}
+                ---
               </h3>
               <p>
                 User Id
@@ -47,7 +47,7 @@
           <div class="small-box bg-yellow">
             <div class="inner">
               <h3>
-                {{ $energyProjects }}
+                ---
               </h3>
               <p>
                 Energy Projects
@@ -66,7 +66,7 @@
           <div class="small-box bg-blue">
             <div class="inner">
               <h3>
-                {{ $ictProjects }}
+                ---
               </h3>
               <p>
                 ICT Projects
@@ -85,7 +85,7 @@
           <div class="small-box bg-red">
             <div class="inner">
               <h3>
-                {{ $engineeringProjects }}
+                ---
               </h3>
               <p>
                 Engineering Projects
@@ -104,7 +104,7 @@
           <div class="small-box bg-green">
             <div class="inner">
               <h3>
-                {{ $news }}
+                ---
               </h3>
               <p>
                 News
@@ -123,7 +123,7 @@
           <div class="small-box bg-aqua">
             <div class="inner">
               <h3>
-                {{ $product }}
+                ---
               </h3>
               <p>
                 Products
@@ -142,7 +142,7 @@
           <div class="small-box bg-yellow">
             <div class="inner">
               <h3>
-                {{ $readMails }}
+                ---
               </h3>
               <p>
                 Read Message(s)
@@ -161,7 +161,7 @@
           <div class="small-box bg-blue">
             <div class="inner">
               <h3>
-                {{ $unReadMails }}
+                ---
               </h3>
               <p>
                 UnRead Messages

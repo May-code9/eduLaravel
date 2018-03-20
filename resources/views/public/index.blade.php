@@ -23,10 +23,14 @@ Home
                   <h3>“ The reason for education is to bring light to the inner gifts in men so that they shine bright with their creativity, innovations, visions, and abilities. ”</h3>
                 </div>
                 <div data-caption-animate="fadeInUp" data-caption-delay="400" class="offset-top-20 offset-xl-top-40">
+                  @guest
                   <a href="{{ route('login') }}" class="btn btn-primary">Join us</a>
                   <div class="inset-xs-left-30 reveal-lg-inline-block">
                     <a href="academic.php" class="btn btn-default veil reveal-lg-inline-block">Learn More</a>
                   </div>
+                  @else
+                  <a href="#" class="btn btn-primary">Learn More</a>
+                  @endguest
                 </div>
               </div>
             </div>

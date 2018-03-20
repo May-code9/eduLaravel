@@ -19,3 +19,7 @@ Route::get('/icourse', ['as'=>'edu_icourse', 'uses'=>'EduController@icourse']);
 Route::get('/courses', ['as'=>'edu_courses', 'uses'=>'EduController@courses']);
 Route::get('/contact', ['as'=>'edu_contact', 'uses'=>'EduController@contact']);
 Route::get('/comingSoon', ['as'=>'coming_soon', 'uses'=>'EduController@coming']);
+
+Route::group(['middleware' => 'admin'], function() {
+    Route::get('/dashboard', ['as'=>'dashboard', 'uses'=>'DashboardController@index']);
+});
