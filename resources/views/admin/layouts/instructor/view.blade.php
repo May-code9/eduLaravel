@@ -27,37 +27,43 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Admin Table</h3>
+              <h3 class="box-title">Instructors</h3>
             </div><!-- /.box-header -->
             <div class="box-body table-responsive">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
                     <th>Id</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
+                    <th>Name</th>
+                    <th>Details</th>
+                    <th>Image</th>
+                    <th>Admin Editor</th>
+                    <th></th>
                   </tr>
                 </thead>
-                @forelse($getAdmins as $getAdmin)
+                @forelse($getInstructors as $getInstructor)
                 <tbody>
                   <tr>
-                    <td>{{ $getAdmin->id }}</td>
-                    <td>{{ $getAdmin->first_name }}</td>
-                    <td>{{ $getAdmin->last_name }}</td>
-                    <td>{{ $getAdmin->email }}</td>
+                    <td>{{ $getInstructor->id }}</td>
+                    <td>{{ $getInstructor->instructor }}</td>
+                    <td>{!! $getInstructor->about_instructor !!}</td>
+                    <td class="center"><img src="{{ asset('images/instructors/' . $getInstructor->instructor_image) }}" width="50" height="50"></td>
+                    <td>{{ $getInstructor->first_name }} {{ $getInstructor->last_name }}</td>
+                    <td class="center"><a href="#" id="edit" class="btn btn-sm btn-primary mr-2">Edit</a></td>
                   </tr>
 
                 </tbody>
                 @empty
-                <h1 style="text-align:center">Admin Users Empty</h1>
+                <h1 style="text-align:center">Instructor Table is empty</h1>
                 @endforelse
                 <tfoot>
                   <tr>
                     <th>Id</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
+                    <th>Name</th>
+                    <th>Details</th>
+                    <th>Image</th>
+                    <th>Admin Editor</th>
+                    <th></th>
                   </tr>
                 </tfoot>
               </table>

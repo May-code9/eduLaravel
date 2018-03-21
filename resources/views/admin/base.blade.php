@@ -5,6 +5,7 @@
   <title>{{config('app.name')}} | Dashboard</title>
   <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
   <link href="css/html.css" rel="stylesheet" type="text/css" />
+  <link href="css/dash.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   @include('admin.links.index')
@@ -20,7 +21,7 @@
   <header class="header">
     <a href="/dashboard" class="logo">
       <!-- Add the class icon to your logo image or logo icon to add the margining -->
-      {{config('app.shortName')}}
+      {{config('app.name')}}
     </a>
     @include("admin.layouts.sidebar.header")
   </header>
@@ -31,8 +32,10 @@
   @include('admin.scripts.news')
   @elseif(Route::currentRouteName() == 'message.index')
   @include('admin.scripts.mail')
-  @else
+  @elseif(Route::currentRouteName() == 'dashboard')
   @include('admin.scripts.index')
+  @else
+  @include('admin.scripts.forms')
   @endif
 </body>
 </html>

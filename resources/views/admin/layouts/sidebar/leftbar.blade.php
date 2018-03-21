@@ -16,50 +16,60 @@
     <ul class="sidebar-menu">
       @if (Auth::user()->role > 2)
       <li class="@if(isset($activeDashboard)) {{ $activeDashboard }} @endif">
-        <a href="#">
+        <a href="{{ route('dashboard') }}">
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
         </a>
       </li>
       <li class="treeview @if(isset($activeProject)) {{ $activeProject }} @endif">
         <a href="#">
-          <i class="fa fa-edit"></i> <span>Courses</span>
+          <i class="fa fa-book"></i> <span>Courses</span>
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-angle-double-right"></i> Add</a></li>
-          <li><a href="#"><i class="fa fa-angle-double-right"></i> View</a></li>
+          <li><a href="#"><i class="fa fa-edit"></i> Add</a></li>
+          <li><a href="#"><i class="fa fa-search"></i> View</a></li>
         </ul>
       </li>
 
       <li class="treeview @if(isset($activeProject)) {{ $activeProject }} @endif">
         <a href="#">
-          <i class="fa fa-edit"></i> <span>Course Contents</span>
+          <i class="fa fa-folder-open-o"></i> <span>Course Contents</span>
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-angle-double-right"></i> Add</a></li>
-          <li><a href="#"><i class="fa fa-angle-double-right"></i> View</a></li>
+          <li><a href="#"><i class="fa fa-edit"></i> Add</a></li>
+          <li><a href="#"><i class="fa fa-search"></i> View</a></li>
         </ul>
       </li>
 
-      <li class="treeview @if(isset($activeProject)) {{ $activeProject }} @endif">
+      <li class="treeview @if(isset($activeInstructor)) {{ $activeInstructor }} @endif">
         <a href="#">
-          <i class="fa fa-edit"></i> <span>Instructors</span>
+          <i class="fa fa-graduation-cap"></i> <span>Instructors</span>
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-angle-double-right"></i> Add</a></li>
-          <li><a href="#"><i class="fa fa-angle-double-right"></i> View</a></li>
+          <li><a href="{{ route('instructor.create') }}"><i class="fa fa-edit"></i> Add</a></li>
+          <li><a href="{{ route('instructor.index') }}"><i class="fa fa-search"></i> View</a></li>
         </ul>
       </li>
       <li class="treeview @if(isset($activeProject)) {{ $activeProject }} @endif">
         <a href="#">
-          <i class="fa fa-edit"></i> <span>Users</span>
+          <i class="fa fa-institution"></i> <span>Schools</span>
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-angle-double-right"></i> Add</a></li>
-          <li><a href="#"><i class="fa fa-angle-double-right"></i> View</a></li>
+          <li><a href="#"><i class="fa fa-edit"></i> Add</a></li>
+          <li><a href="#"><i class="fa fa-search"></i> View</a></li>
+        </ul>
+      </li>
+      <li class="treeview @if(isset($activeProject)) {{ $activeProject }} @endif">
+        <a href="#">
+          <i class="fa fa-group"></i> <span>Users</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="#"><i class="fa fa-edit"></i> Add</a></li>
+          <li><a href="#"><i class="fa fa-search"></i> View</a></li>
         </ul>
       </li>
 
@@ -69,8 +79,8 @@
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-angle-double-right"></i>Testimony List</a></li>
-          <li><a href="#"><i class="fa fa-angle-double-right"></i>Message List</a></li>
+          <li><a href="#"><i class="fa fa-edit"></i>Testimony List</a></li>
+          <li><a href="#"><i class="fa fa-edit"></i>Message List</a></li>
         </ul>
       </li> -->
       <li class="@if(isset($activeMessage)) {{ $activeMessage }} @endif">
@@ -91,12 +101,12 @@
       @if(Auth::user()->role == 4)
       <li class="treeview ">
         <a href="#">
-          <i class="fa fa-users"></i> <span>Admin</span>
+          <i class="fa fa-user"></i> <span>Admin</span>
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-angle-double-right"></i> View Admin</a></li>
-          <li><a href="#"><i class="fa fa-angle-double-right"></i> Add Admin</a></li>
+          <li><a href="#"><i class="fa fa-edit"></i> View Admin</a></li>
+          <li><a href="#"><i class="fa fa-search"></i> Add Admin</a></li>
         </ul>
       </li>
       @endif

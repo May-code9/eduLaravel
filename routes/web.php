@@ -22,4 +22,5 @@ Route::get('/comingSoon', ['as'=>'coming_soon', 'uses'=>'EduController@coming'])
 
 Route::group(['middleware' => 'admin'], function() {
     Route::get('/dashboard', ['as'=>'dashboard', 'uses'=>'DashboardController@index']);
+    Route::resource('instructor', 'InstructorController');
 });
