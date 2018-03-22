@@ -85,8 +85,16 @@
                   @endif
                 </div>
               </div>
-              <div class="box-footer col-md-12">
-                <button type = "submit" name = "add_news" value = "Add" class="btn btn-warning btn-lg glyphicon glyphicon-pencil" />
+              <div class="box-footer col-md-6">
+                <button type = "submit" class="btn btn-warning btn-lg glyphicon glyphicon-floppy-disk"/>
+              </div>
+            </form>
+            <form action="/instructor/{{ $instructor->id }}" method="POST">
+              {{ csrf_field() }}
+              {{ method_field('DELETE') }}
+
+              <div class="box-footer col-md-6">
+                <button type = "submit" class="btn btn-danger btn-lg glyphicon glyphicon-trash pull-right"> Trash</button>
               </div>
             </form>
           </div><!-- /.box -->

@@ -19,6 +19,7 @@ class CreateInstructorsTable extends Migration
             $table->string('instructor');
             $table->text('about_instructor');
             $table->string('instructor_image');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

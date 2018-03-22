@@ -75,8 +75,7 @@ class InstructorController extends Controller
      */
     public function edit($id)
     {
-        $instructor = Instructor::join('users', 'users.id', '=', 'instructors.user_id')
-        ->select('instructors.id', 'instructor', 'about_instructor', 'instructor_image', 'first_name', 'last_name')->findOrFail($id);
+        $instructor = Instructor::findOrFail($id);
 
         $activeInstructor = 'active';
         return view('admin.layouts.instructor.edit', compact('activeInstructor', 'instructor'));
@@ -101,9 +100,9 @@ class InstructorController extends Controller
 
         $instructor_name = $request->input('instructor');
         $about_instructor = $request->input('about_instructor');
-        
+
         $instructor->update(['instructor'=>$instructor_name, 'about_instructor'=>$about_instructor, 'instructor_image'=>$imagename]);
-        return redirect('/instructor');
+        return redirect('/instructor')->with("success_status", "Instructor Details Updated");
     }
 
     /**
@@ -114,6 +113,7 @@ class InstructorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Instructor::destroy($id);
+        return redirect('/instructor')->with("failure_status", "Instructor Moved to Trash");
     }
 }

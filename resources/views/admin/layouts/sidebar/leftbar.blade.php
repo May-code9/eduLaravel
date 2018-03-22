@@ -50,6 +50,7 @@
         <ul class="treeview-menu">
           <li><a href="{{ route('instructor.create') }}"><i class="fa fa-edit"></i> Add</a></li>
           <li><a href="{{ route('instructor.index') }}"><i class="fa fa-search"></i> View</a></li>
+          <li><a href="{{ route('trashedInstructor.index') }}"><i class="fa fa-trash"></i> Trash</a></li>
         </ul>
       </li>
       <li class="treeview @if(isset($activeProject)) {{ $activeProject }} @endif">
