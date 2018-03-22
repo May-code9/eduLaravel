@@ -46,10 +46,10 @@
                   <tr>
                     <td>{{ $getInstructor->id }}</td>
                     <td>{{ $getInstructor->instructor }}</td>
-                    <td>{!! $getInstructor->about_instructor !!}</td>
+                    <td>{!! $getInstructor->shortMessage !!}</td>
                     <td class="center"><img src="{{ asset('images/instructors/' . $getInstructor->instructor_image) }}" width="50" height="50"></td>
                     <td>{{ $getInstructor->first_name }} {{ $getInstructor->last_name }}</td>
-                    <td class="center"><a href="#" id="edit" class="btn btn-sm btn-primary mr-2">Edit</a></td>
+                    <td class="center"><a href="/instructor/{{ $getInstructor->id }}/edit" id="edit" class="btn btn-sm btn-primary mr-2">Edit</a></td>
                   </tr>
 
                 </tbody>

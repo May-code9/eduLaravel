@@ -76,7 +76,7 @@
                 <div class="form-group{{ $errors->has('instructor_image') ? ' has-error' : '' }}">
                   <label>Instructor's Image</label>
                   <input type="file" name="instructor_image" id="instructor_image" value="{{ old('instructor_image') }}" required>
-                  <p style="padding-left:10px">Image Size: 790X420 or It's Equivalent Ratio</p>
+                  <p style="padding-left:10px">Image ratio: 1.0 or It's Equivalent Ratio</p>
                   @if ($errors->has('instructor_image'))
                   <span class="help-block">
                     <strong>{{ $errors->first('instructor_image') }}</strong>

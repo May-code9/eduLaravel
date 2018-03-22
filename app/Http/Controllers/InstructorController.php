@@ -75,7 +75,11 @@ class InstructorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $instructor = Instructor::join('users', 'users.id', '=', 'instructors.user_id')
+        ->select('instructors.id', 'instructor', 'about_instructor', 'instructor_image', 'first_name', 'last_name')->findOrFail($id);
+
+        $activeInstructor = 'active';
+        return view('admin.layouts.instructor.edit', compact('activeInstructor', 'instructor'));
     }
 
     /**
@@ -87,7 +91,19 @@ class InstructorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $instructor = Instructor::findOrFail($id);
+        $photo = $request->file('instructor_image');
+        $imagename = time().'.'.$photo->getClientOriginalExtension();
+
+        $destinationPath = public_path('/images/instructors');
+        $thumb_img = Image::make($photo->getRealPath())->resize(400, 400);
+        $thumb_img->save($destinationPath.'/'.$imagename);
+
+        $instructor_name = $request->input('instructor');
+        $about_instructor = $request->input('about_instructor');
+        
+        $instructor->update(['instructor'=>$instructor_name, 'about_instructor'=>$about_instructor, 'instructor_image'=>$imagename]);
+        return redirect('/instructor');
     }
 
     /**
