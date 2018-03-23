@@ -17,9 +17,11 @@ class CreateCoursesTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('school_id');
+            $table->integer('instructor_id');
             $table->string('course');
             $table->integer('total_weeks');
             $table->text('about_course');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

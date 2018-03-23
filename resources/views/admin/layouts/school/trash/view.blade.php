@@ -43,7 +43,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Instructors</h3>
+              <h3 class="box-title">Trash</h3>
             </div><!-- /.box-header -->
             <div class="box-body table-responsive">
               <table id="example1" class="table table-bordered table-striped">
@@ -67,12 +67,12 @@
                     <td>{{ $getSchool->time }}</td>
                     <td>{{ $getSchool->founder }}</td>
                     <td>{{ $getSchool->first_name }} {{ $getSchool->last_name }}</td>
-                    <td class="center"><a href="/school/{{ $getSchool->id }}/edit" id="edit" class="btn btn-md btn-primary mr-2" >Edit</a></td>
+                    <td class="center"><a href="/trashedSchool/{{ $getSchool->id }}/edit" id="edit" class="btn btn-md btn-primary mr-2" >Edit</a></td>
                   </tr>
 
                 </tbody>
                 @empty
-                <h1 style="text-align:center">School Table is empty</h1>
+                <h1 style="text-align:center">Empty Trash</h1>
                 @endforelse
                 <tfoot>
                   <tr>

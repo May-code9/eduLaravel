@@ -16,4 +16,12 @@ $(function() {
   //bootstrap WYSIHTML5 - text editor
   $(".textarea").wysihtml5();
 });
+
+$(function () {
+  $("#editBtn").on('click', function () {
+    $("#editBtn").fadeOut(500);
+    $("#date").fadeOut(500);
+    $("#changeDate").slideToggle(1000);
+  })
+})
 </script>

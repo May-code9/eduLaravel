@@ -53,14 +53,15 @@
           <li><a href="{{ route('trashedInstructor.index') }}"><i class="fa fa-trash"></i> Trash</a></li>
         </ul>
       </li>
-      <li class="treeview @if(isset($activeProject)) {{ $activeProject }} @endif">
+      <li class="treeview @if(isset($activeSchool)) {{ $activeSchool }} @endif">
         <a href="#">
           <i class="fa fa-institution"></i> <span>Schools</span>
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-edit"></i> Add</a></li>
-          <li><a href="#"><i class="fa fa-search"></i> View</a></li>
+          <li><a href="{{ route('school.create') }}"><i class="fa fa-edit"></i> Add</a></li>
+          <li><a href="{{ route('school.index') }}"><i class="fa fa-search"></i> View</a></li>
+          <li><a href="{{ route('trashedSchool.index') }}"><i class="fa fa-trash"></i> Trash</a></li>
         </ul>
       </li>
       <li class="treeview @if(isset($activeProject)) {{ $activeProject }} @endif">

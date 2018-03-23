@@ -23,6 +23,7 @@ class CreateContentsTable extends Migration
             $table->string('content_pdf');
             $table->string('content_image')->nullable();
             $table->string('content_video')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

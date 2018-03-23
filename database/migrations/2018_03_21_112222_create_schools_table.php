@@ -18,8 +18,9 @@ class CreateSchoolsTable extends Migration
             $table->integer('user_id');
             $table->string('name');
             $table->text('locations');
-            $table->string('founded');
+            $table->date('founded');
             $table->string('founder');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
