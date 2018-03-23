@@ -30,8 +30,8 @@
       @endif
 
       @if(session('failure_status'))
-      <div class = "alert alert-danger">
-        <i class="fa fa-check"></i>
+      <div class = "alert alert-warning alert-dismissable">
+        <i class="fa fa-warning"></i>
         {{session('failure_status')}}
       </div>
       @endif
@@ -63,7 +63,7 @@
                     <td>{{ $getInstructor->id }}</td>
                     <td>{{ $getInstructor->instructor }}</td>
                     <td>{!! $getInstructor->shortMessage !!}</td>
-                    <td class="center"><img src="{{ asset('images/instructors/' . $getInstructor->instructor_image) }}" width="50" height="50"></td>
+                    <td class="center"><a href="/edit Instructor Image/{{ $getInstructor->id }}"><img src="{{ asset('images/instructors/' . $getInstructor->instructor_image) }}" width="50" height="50"></a></td>
                     <td>{{ $getInstructor->first_name }} {{ $getInstructor->last_name }}</td>
                     <td class="center"><a href="/instructor/{{ $getInstructor->id }}/edit" id="edit" class="btn btn-md btn-primary mr-2" >Edit</a></td>
                   </tr>

@@ -91,17 +91,18 @@ class InstructorController extends Controller
     public function update(Request $request, $id)
     {
         $instructor = Instructor::findOrFail($id);
-        $photo = $request->file('instructor_image');
-        $imagename = time().'.'.$photo->getClientOriginalExtension();
+        //$photo = $request->file('instructor_image');
+        //$imagename = time().'.'.$photo->getClientOriginalExtension();
 
-        $destinationPath = public_path('/images/instructors');
-        $thumb_img = Image::make($photo->getRealPath())->resize(400, 400);
-        $thumb_img->save($destinationPath.'/'.$imagename);
+        //$destinationPath = public_path('/images/instructors');
+        //$thumb_img = Image::make($photo->getRealPath())->resize(400, 400);
+        //$thumb_img->save($destinationPath.'/'.$imagename);
 
         $instructor_name = $request->input('instructor');
         $about_instructor = $request->input('about_instructor');
+        $user_id = $request->input('user_id');
 
-        $instructor->update(['instructor'=>$instructor_name, 'about_instructor'=>$about_instructor, 'instructor_image'=>$imagename]);
+        $instructor->update(['instructor'=>$instructor_name, 'about_instructor'=>$about_instructor, 'user_id'=>$user_id]);
         return redirect('/instructor')->with("success_status", "Instructor Details Updated");
     }
 

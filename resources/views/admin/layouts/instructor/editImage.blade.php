@@ -43,58 +43,28 @@
           <!-- general form elements -->
           <div class="box box-warning">
             <div class="box-header">
-              <h3 class="box-title">Edit Instructor</h3>
+              <h3 class="box-title">Edit Instructor Image</h3>
             </div><!-- /.box-header -->
 
             <!-- form start -->
-            <form method="post" action="/instructor/{{ $instructor->id }}" enctype="multipart/form-data">
-              {{ method_field('PUT') }}
+            <form method="post" action="/edit Instructor Image/{{ $instructor->id }}" enctype="multipart/form-data">
               {{ csrf_field() }}
               <div class="box-body">
-                <div class="form-group{{ $errors->has('instructor') ? ' has-error' : '' }}">
-                  <label>Name(s) of Instructor(s)</label>
-                  <input type="text" class="form-control" name="instructor" id="instructor" value="{{ $instructor->instructor }}" placeholder="Enter ..." required/>
-                  @if ($errors->has('instructor'))
-                  <span class="help-block">
-                    <strong>{{ $errors->first('instructor') }}</strong>
-                  </span>
-                  @endif
-                </div>
-
-                <div class="form-group{{ $errors->has('about_instructor') ? ' has-error' : '' }}">
-                  <label>About Instructor(s)</label>
-                  <!-- tools box -->
-                  <textarea id="editor1" name="about_instructor" placeholder="Enter ..." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" required>{{ $instructor->about_instructor }}</textarea>
-                  @if ($errors->has('about_instructor'))
-                  <span class="help-block">
-                    <strong>{{ $errors->first('about_instructor') }}</strong>
-                  </span>
-                  @endif
-                </div>
-
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"/>
 
-                <!-- <div class="form-group{{ $errors->has('instructor_image') ? ' has-error' : '' }}">
+                <div class="form-group{{ $errors->has('instructor_image') ? ' has-error' : '' }}">
                   <label>Instructor's Image</label>
-                  <input type="file" name="instructor_image" id="instructor_image" value="{{ $instructor->instructor_image }}" >
+                  <input type="file" name="instructor_image" id="instructor_image" value="" >
                   <p style="padding-left:10px">Image ratio: 1.0 or It's Equivalent Ratio</p>
                   @if ($errors->has('instructor_image'))
                   <span class="help-block">
                     <strong>{{ $errors->first('instructor_image') }}</strong>
                   </span>
                   @endif
-                </div> -->
+                </div>
               </div>
-              <div class="box-footer col-md-6">
+              <div class="box-footer col-md-12">
                 <button type = "submit" class="btn btn-warning btn-lg glyphicon glyphicon-floppy-disk"/>
-              </div>
-            </form>
-            <form action="/instructor/{{ $instructor->id }}" method="POST">
-              {{ csrf_field() }}
-              {{ method_field('DELETE') }}
-
-              <div class="box-footer col-md-6">
-                <button type = "submit" class="btn btn-danger btn-lg glyphicon glyphicon-trash pull-right"> Trash</button>
               </div>
             </form>
           </div><!-- /.box -->

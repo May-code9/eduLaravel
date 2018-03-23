@@ -30,8 +30,8 @@
       @endif
 
       @if(session('failure_status'))
-      <div class = "alert alert-danger">
-        <i class="fa fa-check"></i>
+      <div class = "alert alert-warning alert-dismissable">
+        <i class="fa fa-warning"></i>
         {{session('failure_status')}}
       </div>
       @endif

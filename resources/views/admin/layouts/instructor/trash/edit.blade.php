@@ -28,8 +28,8 @@
       @endif
 
       @if(session('failure_status'))
-      <div class = "alert alert-danger">
-        <i class="fa fa-check"></i>
+      <div class = "alert alert-warning alert-dismissable">
+        <i class="fa fa-warning"></i>
         {{session('failure_status')}}
       </div>
       @endif
@@ -75,7 +75,7 @@
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"/>
                 <input type="hidden" name="deleted_at" value="">
 
-                <div class="form-group{{ $errors->has('instructor_image') ? ' has-error' : '' }}">
+                <!-- <div class="form-group{{ $errors->has('instructor_image') ? ' has-error' : '' }}">
                   <label>Instructor's Image</label>
                   <input type="file" name="instructor_image" id="instructor_image" value="{{ $instructor->instructor_image }}" disabled>
                   <p style="padding-left:10px">Image ratio: 1.0 or It's Equivalent Ratio</p>
@@ -84,7 +84,7 @@
                     <strong>{{ $errors->first('instructor_image') }}</strong>
                   </span>
                   @endif
-                </div>
+                </div> -->
               </div>
               <div class="box-footer col-md-6">
                 <button type = "submit" class="btn btn-warning btn-lg glyphicon glyphicon-floppy-disk"> Restore</button>
