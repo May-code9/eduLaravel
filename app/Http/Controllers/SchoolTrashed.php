@@ -61,7 +61,10 @@ class SchoolTrashed extends Controller
      */
     public function edit($id)
     {
-        //
+      $school = School::onlyTrashed()->findOrFail($id);
+
+      $activeSchool = 'active';
+      return view('admin.layouts.school.trash.edit', compact('activeSchool', 'school'));
     }
 
     /**
@@ -73,7 +76,8 @@ class SchoolTrashed extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $school = School::withTrashed()->findOrFail($id)->restore();
+      return redirect('/trashedSchool')->with("success_status", "School Restored");
     }
 
     /**
@@ -84,6 +88,8 @@ class SchoolTrashed extends Controller
      */
     public function destroy($id)
     {
-        //
+      $school = School::withTrashed()->findOrFail($id);
+      $school->forceDelete();
+      return redirect('/trashedSchool')->with("failure_status", "School Deleted");
     }
 }
