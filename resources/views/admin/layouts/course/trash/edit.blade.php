@@ -43,17 +43,17 @@
           <!-- general form elements -->
           <div class="box box-success">
             <div class="box-header">
-              <h3 class="box-title">Add Course</h3>
+              <h3 class="box-title">Restore Course</h3>
             </div><!-- /.box-header -->
 
             <!-- form start -->
-            <form method="post" action="/course/{{ $course->id }}" enctype="multipart/form-data">
+            <form method="post" action="/trashedCourse/{{ $course->id }}" enctype="multipart/form-data">
               {{ csrf_field() }}
               {{ method_field('PUT') }}
               <div class="box-body">
                 <div class="form-group{{ $errors->has('course') ? ' has-error' : '' }}">
                   <label>Title of Course</label>
-                  <input type="text" class="form-control" name="course" id="course" value="{{ $course->course }}" placeholder="Enter ..." required/>
+                  <input type="text" class="form-control" name="course" id="course" value="{{ $course->course }}" placeholder="Enter ..." disabled/>
                   @if ($errors->has('course'))
                   <span class="help-block">
                     <strong>{{ $errors->first('course') }}</strong>
@@ -64,7 +64,7 @@
                 <div class="form-group{{ $errors->has('about_course') ? ' has-error' : '' }}">
                   <label>About Course</label>
                   <!-- tools box -->
-                  <textarea id="editor1" name="about_course" placeholder="Enter ..." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" required>{{ $course->about_course }}</textarea>
+                  <textarea id="editor1" name="about_course" placeholder="Enter ..." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" disabled>{{ $course->about_course }}</textarea>
                   @if ($errors->has('about_course'))
                   <span class="help-block">
                     <strong>{{ $errors->first('about_course') }}</strong>
@@ -76,11 +76,8 @@
 
                 <div class="form-group{{ $errors->has('total_weeks') ? ' has-error' : '' }}">
                   <label>Number of Weeks</label>
-                  <select type="text" class="form-control" name="total_weeks" id="total_weeks" required>
+                  <select type="text" class="form-control" name="total_weeks" id="total_weeks" disabled>
                     <option value="{{ $course->total_weeks }}">{{ $course->total_weeks }}</option>
-                    @foreach($noOfWeeks as $noOfWeek)
-                    <option>{{ $noOfWeek->week_no }}</option>
-                    @endforeach
                   </select>
                   @if ($errors->has('total_weeks'))
                   <span class="help-block">
@@ -91,11 +88,8 @@
 
                 <div class="form-group{{ $errors->has('instructor_id') ? ' has-error' : '' }}">
                   <label>Course Instructor</label>
-                  <select type="text" class="form-control" name="instructor_id" id="instructor_id" required>
+                  <select type="text" class="form-control" name="instructor_id" id="instructor_id" disabled>
                     <option value="{{ $course->instructor_id }}">{{ $course->instructor }}</option>
-                    @foreach($instructor_ids as $instructor_id)
-                    <option value="{{ $instructor_id->id }}">{{ $instructor_id->instructor }}</option>
-                    @endforeach
                   </select>
                   @if ($errors->has('instructor_id'))
                   <span class="help-block">
@@ -106,11 +100,8 @@
 
                 <div class="form-group{{ $errors->has('school_id') ? ' has-error' : '' }}">
                   <label>School</label>
-                  <select type="text" class="form-control" name="school_id" id="school_id" required>
+                  <select type="text" class="form-control" name="school_id" id="school_id" disabled>
                     <option value="{{ $course->school_id }}">{{ $course->name }}</option>
-                    @foreach($school_ids as $school_id)
-                    <option value="{{ $school_id->id }}">{{ $school_id->name }}</option>
-                    @endforeach
                   </select>
                   @if ($errors->has('school_id'))
                   <span class="help-block">
@@ -121,15 +112,15 @@
 
               </div>
               <div class="box-footer col-md-6">
-                <button type = "submit" class="btn btn-success btn-lg glyphicon glyphicon-floppy-disk" />
+                <button type = "submit" class="btn btn-warning btn-lg glyphicon glyphicon-floppy-disk"> Restore</button>
               </div>
             </form>
-            <form action="/course/{{ $course->id }}" method="POST">
+            <form action="/trashedCourse/{{ $course->id }}" method="POST">
               {{ csrf_field() }}
               {{ method_field('DELETE') }}
 
               <div class="box-footer col-md-6">
-                <button type = "submit" class="btn btn-danger btn-lg glyphicon glyphicon-trash pull-right"> Trash</button>
+                <button type = "submit" class="btn btn-danger btn-lg glyphicon glyphicon-trash pull-right"> Delete</button>
               </div>
             </form>
           </div><!-- /.box -->

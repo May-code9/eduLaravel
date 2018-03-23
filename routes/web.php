@@ -30,4 +30,7 @@ Route::group(['middleware' => 'admin'], function() {
     //School
     Route::resource('school', 'SchoolController');
     Route::resource('trashedSchool', 'SchoolTrashed');
+    //Courses
+    Route::resource('course', 'CourseController');
+    Route::resource('trashedCourse', 'CourseTrashed');
 });

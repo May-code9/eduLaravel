@@ -43,7 +43,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Courses</h3>
+              <h3 class="box-title">Trashed Courses</h3>
             </div><!-- /.box-header -->
             <div class="box-body table-responsive">
               <table id="example1" class="table table-bordered table-striped">
@@ -69,7 +69,7 @@
                     <td>{!! $getCourse->shortMessage !!}</td>
                     <td>{{ $getCourse->total_weeks }}</td>
                     <td>{{ $getCourse->first_name }} {{ $getCourse->last_name }}</td>
-                    <td class="center"><a href="/course/{{ $getCourse->id }}/edit" id="edit" class="btn btn-md btn-primary mr-2" >Edit</a></td>
+                    <td class="center"><a href="/trashedCourse/{{ $getCourse->id }}/edit" id="edit" class="btn btn-md btn-primary mr-2" >Edit</a></td>
                   </tr>
 
                 </tbody>

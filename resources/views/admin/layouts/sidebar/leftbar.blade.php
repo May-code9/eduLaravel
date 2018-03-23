@@ -20,14 +20,15 @@
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
         </a>
       </li>
-      <li class="treeview @if(isset($activeProject)) {{ $activeProject }} @endif">
+      <li class="treeview @if(isset($activeCourse)) {{ $activeCourse }} @endif">
         <a href="#">
           <i class="fa fa-book"></i> <span>Courses</span>
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-edit"></i> Add</a></li>
-          <li><a href="#"><i class="fa fa-search"></i> View</a></li>
+          <li><a href="{{ route('course.create') }}"><i class="fa fa-edit"></i> Add</a></li>
+          <li><a href="{{ route('course.index') }}"><i class="fa fa-search"></i> View</a></li>
+          <li><a href="{{ route('trashedCourse.index') }}"><i class="fa fa-trash"></i> Trash</a></li>
         </ul>
       </li>
 
