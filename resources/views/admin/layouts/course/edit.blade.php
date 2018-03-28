@@ -43,7 +43,7 @@
           <!-- general form elements -->
           <div class="box box-success">
             <div class="box-header">
-              <h3 class="box-title">Add Course</h3>
+              <h3 class="box-title">Edit Course</h3>
             </div><!-- /.box-header -->
 
             <!-- form start -->
@@ -78,9 +78,10 @@
                   <label>Number of Weeks</label>
                   <select type="text" class="form-control" name="total_weeks" id="total_weeks" required>
                     <option value="{{ $course->total_weeks }}">{{ $course->total_weeks }}</option>
-                    @foreach($noOfWeeks as $noOfWeek)
-                    <option>{{ $noOfWeek->week_no }}</option>
-                    @endforeach
+                    <option disabled>---------------------------------------</option>
+                    @for($i = 0; $i < count(noOfWeeks()); $i++)
+                    <option value="{{ noOfWeeks()[$i] }}">{{ noOfWeeks()[$i] }}</option>
+                    @endfor
                   </select>
                   @if ($errors->has('total_weeks'))
                   <span class="help-block">
@@ -93,6 +94,7 @@
                   <label>Course Instructor</label>
                   <select type="text" class="form-control" name="instructor_id" id="instructor_id" required>
                     <option value="{{ $course->instructor_id }}">{{ $course->instructor }}</option>
+                    <option disabled>---------------------------------------</option>
                     @foreach($instructor_ids as $instructor_id)
                     <option value="{{ $instructor_id->id }}">{{ $instructor_id->instructor }}</option>
                     @endforeach
@@ -108,6 +110,7 @@
                   <label>School</label>
                   <select type="text" class="form-control" name="school_id" id="school_id" required>
                     <option value="{{ $course->school_id }}">{{ $course->name }}</option>
+                    <option disabled>---------------------------------------</option>
                     @foreach($school_ids as $school_id)
                     <option value="{{ $school_id->id }}">{{ $school_id->name }}</option>
                     @endforeach

@@ -21,7 +21,9 @@ class CourseController extends Controller
       $getCourses = Course::join('users', 'users.id', '=', 'courses.user_id')
       ->join('schools', 'schools.id', '=', 'courses.school_id')
       ->join('instructors', 'instructors.id', '=', 'courses.instructor_id')
-      ->select('courses.id', 'name', 'course', 'total_weeks', 'about_course', 'instructor', 'instructor_id', 'school_id', 'first_name', 'last_name')->get();
+      ->select('courses.id', 'name', 'course', 'total_weeks', 'about_course', 'instructor', 'instructor_id', 'school_id', 'first_name', 'last_name')
+      ->orderBy('courses.id')
+      ->get();
 
       return view('admin.layouts.course.view', compact('activeCourse', 'getCourses'));
     }
@@ -33,12 +35,11 @@ class CourseController extends Controller
      */
     public function create()
     {
-        $noOfWeeks = Week::get();
         $instructor_ids = Instructor::get();
         $school_ids = School::get();
 
         $activeCourse = "active";
-        return view('admin.layouts.course.add', compact('noOfWeeks', 'instructor_ids', 'school_ids'));
+        return view('admin.layouts.course.add', compact('instructor_ids', 'school_ids', 'activeCourse'));
     }
 
     /**
@@ -79,10 +80,10 @@ class CourseController extends Controller
         ->findOrFail($id);
 
         $activeCourse = "active";
-        $noOfWeeks = Week::get();
+        //$noOfWeeks = Week::get();
         $instructor_ids = Instructor::get();
         $school_ids = School::get();
-        return view('admin.layouts.course.edit', compact('course', 'activeCourse', 'noOfWeeks', 'instructor_ids', 'school_ids'));
+        return view('admin.layouts.course.edit', compact('course', 'activeCourse', 'instructor_ids', 'school_ids'));
     }
 
     /**

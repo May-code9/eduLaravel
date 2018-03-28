@@ -32,14 +32,14 @@
         </ul>
       </li>
 
-      <li class="treeview @if(isset($activeProject)) {{ $activeProject }} @endif">
+      <li class="treeview @if(isset($activeContent)) {{ $activeContent }} @endif">
         <a href="#">
           <i class="fa fa-folder-open-o"></i> <span>Course Contents</span>
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-edit"></i> Add</a></li>
-          <li><a href="#"><i class="fa fa-search"></i> View</a></li>
+          <li><a href="{{ route('content.create') }}"><i class="fa fa-edit"></i> Add</a></li>
+          <li><a href="{{ route('content.index') }}"><i class="fa fa-search"></i> View</a></li>
         </ul>
       </li>
 

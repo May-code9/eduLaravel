@@ -17,10 +17,11 @@ class CreateContentsTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('course_id');
-            $table->integer('week_id');
             $table->integer('category_id');
-            $table->text('content_title');
+            $table->integer('week_no');
+            $table->string('content_title');
             $table->string('content_pdf');
+            $table->text('content_text');
             $table->string('content_image')->nullable();
             $table->string('content_video')->nullable();
             $table->softDeletes();

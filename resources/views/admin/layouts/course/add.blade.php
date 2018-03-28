@@ -77,9 +77,9 @@
                   <label>Number of Weeks</label>
                   <select type="text" class="form-control" name="total_weeks" id="total_weeks" required>
                     <option value="">Select number of weeks in this course</option>
-                    @foreach($noOfWeeks as $noOfWeek)
-                    <option>{{ $noOfWeek->week_no }}</option>
-                    @endforeach
+                    @for($i = 0; $i < count(noOfWeeks()); $i++)
+                    <option value="{{ noOfWeeks()[$i] }}">{{ noOfWeeks()[$i] }}</option>
+                    @endfor
                   </select>
                   @if ($errors->has('total_weeks'))
                   <span class="help-block">

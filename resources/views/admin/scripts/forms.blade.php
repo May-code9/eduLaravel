@@ -23,5 +23,18 @@ $(function () {
     $("#date").fadeOut(500);
     $("#changeDate").slideToggle(1000);
   })
+});
+
+$(function () {
+  $("#category_id").on('change', function () {
+    var category = $("#category_id").val();
+    if(category == 1) {
+      $("#content_video").slideToggle(1000);
+      $("#content_image").fadeOut(1000);
+    } else if (category == 3) {
+      $("#content_image").slideToggle(1000);
+      $("#content_video").fadeOut(1000);
+    }
+  })
 })
 </script>
