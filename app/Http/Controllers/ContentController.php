@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Image;
-use App\Content;
 use App\Course;
+use App\Content;
 use App\Category;
 
 class ContentController extends Controller
@@ -153,6 +153,7 @@ class ContentController extends Controller
   */
   public function destroy($id)
   {
-    //
+    Content::destroy($id);
+    return redirect('/content')->with("failure_status", "Content Moved to Trash");
   }
 }

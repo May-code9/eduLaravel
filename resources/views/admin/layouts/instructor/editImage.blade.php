@@ -19,7 +19,7 @@
       </ol>
     </section>
 
-    <div class="col-md-10 col-md-push-1" style="padding-left:0px">
+    <div class="col-md-4 col-md-push-4 col-sm-6 col-sm-push-3" style="padding-left:0px">
       @if(session('success_status'))
       <div class = "alert alert-success alert-dismissable">
         <i class="fa fa-check"></i>
@@ -39,7 +39,7 @@
     <section class="content">
       <div class="row">
         <!-- left column -->
-        <div class="col-md-10 col-md-push-1">
+        <div class="col-md-4 col-md-push-4 col-sm-6 col-sm-push-3">
           <!-- general form elements -->
           <div class="box box-warning">
             <div class="box-header">
@@ -52,9 +52,14 @@
               <div class="box-body">
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"/>
 
+                <div class="form-group">
+                  <p>Instructor's Current Image</p>
+                  <img class="img-responsive" src="{{ asset('images/instructors/' . $instructor->instructor_image) }}" >
+                </div>
+
                 <div class="form-group{{ $errors->has('instructor_image') ? ' has-error' : '' }}">
                   <label>Instructor's Image</label>
-                  <input type="file" name="instructor_image" id="instructor_image" value="" >
+                  <input type="file" name="instructor_image" id="instructor_image" value="" required>
                   <p style="padding-left:10px">Image ratio: 1.0 or It's Equivalent Ratio</p>
                   @if ($errors->has('instructor_image'))
                   <span class="help-block">

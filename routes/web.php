@@ -35,4 +35,9 @@ Route::group(['middleware' => 'admin'], function() {
     Route::resource('trashedCourse', 'CourseTrashed');
     //Content
     Route::resource('content', 'ContentController');
+    Route::resource('trashedContent', 'ContentTrashed');
+    Route::get('/edit Content Image/{id}', ['as'=>'edit.content.image', 'uses'=>'EditImagesController@content']);
+    Route::post('/edit Content Image/{id}', ['as'=>'edit.content.image', 'uses'=>'EditImagesController@post_content']);
+    Route::get('/edit Content Video/{id}', ['as'=>'edit.content.video', 'uses'=>'EditVideoController@video']);
+    Route::post('/edit Content Video/{id}', ['as'=>'edit.content.video', 'uses'=>'EditVideoController@post_video']);
 });

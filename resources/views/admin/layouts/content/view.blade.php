@@ -73,12 +73,16 @@
                     @if(is_null($getContent->content_video))
                     <td>No Video</td>
                     @else
-                    <td>{{ $getContent->shortVideo }}</td>
+                    <td><a href="/edit Content Video/{{ $getContent->id }}">
+                      <video width="200" height="150">
+                       <source src="{{ asset('video/' . $getContent->content_video) }}" type="video/mp4">
+                      </video></a>
+                    </td>
                     @endif
                     @if(is_null($getContent->content_image))
                     <td>No Image</td>
                     @else
-                    <td class="center"><img src="{{ asset('images/content/' . $getContent->content_image) }}" width="50" height="50"></td>
+                    <td class="center"><a href="/edit Content Image/{{ $getContent->id }}"><img src="{{ asset('images/content/' . $getContent->content_image) }}" width="50" height="50"></a></td>
                     @endif
                     <td>{{ $getContent->category }}</td>
                     <td>{{ $getContent->week_no }}</td>

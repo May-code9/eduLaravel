@@ -43,7 +43,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Trashed Courses</h3>
+              <h3 class="box-title">Content</h3>
             </div><!-- /.box-header -->
             <div class="box-body table-responsive">
               <table id="example1" class="table table-bordered table-striped">
@@ -51,25 +51,43 @@
                   <tr>
                     <th>Id</th>
                     <th>Course Title</th>
-                    <th>Course Lecturer</th>
-                    <th>School</th>
-                    <th>About Course</th>
-                    <th>Total Weeks</th>
+                    <th>Content Title</th>
+                    <th>Content Details</th>
+                    <th>PDF</th>
+                    <th>Video</th>
+                    <th>Image</th>
+                    <th>Category</th>
+                    <th>Week No</th>
                     <th>Admin Editor</th>
                     <th></th>
                   </tr>
                 </thead>
-                @forelse($getCourses as $getCourse)
+                @forelse($getContents as $getContent)
                 <tbody>
                   <tr>
-                    <td>{{ $getCourse->id }}</td>
-                    <td>{{ $getCourse->course }}</td>
-                    <td>{{ $getCourse->instructor }}</td>
-                    <td>{{ $getCourse->name }}</td>
-                    <td>{!! $getCourse->shortMessage !!}</td>
-                    <td>{{ $getCourse->total_weeks }}</td>
-                    <td>{{ $getCourse->first_name }} {{ $getCourse->last_name }}</td>
-                    <td class="center"><a href="/trashedCourse/{{ $getCourse->id }}/edit" id="edit" class="btn btn-md btn-primary mr-2" >Edit</a></td>
+                    <td>{{ $getContent->id }}</td>
+                    <td>{{ $getContent->course }}</td>
+                    <td>{{ $getContent->content_title }}</td>
+                    <td>{!! $getContent->shortContent !!}</td>
+                    <td>{{ $getContent->content_pdf }}</td>
+                    @if(is_null($getContent->content_video))
+                    <td>No Video</td>
+                    @else
+                    <td><a href="/content/{{ $getContent->id }}/edit">
+                      <video width="200" height="150">
+                       <source src="{{ asset('video/' . $getContent->content_video) }}" type="video/mp4">
+                      </video></a>
+                    </td>
+                    @endif
+                    @if(is_null($getContent->content_image))
+                    <td>No Image</td>
+                    @else
+                    <td class="center"><img src="{{ asset('images/content/' . $getContent->content_image) }}" width="50" height="50"></td>
+                    @endif
+                    <td>{{ $getContent->category }}</td>
+                    <td>{{ $getContent->week_no }}</td>
+                    <td>{{ $getContent->first_name }} {{ $getContent->last_name }}</td>
+                    <td class="center"><a href="/trashedContent/{{ $getContent->id }}/edit" id="edit" class="btn btn-md btn-primary mr-2" >Edit</a></td>
                   </tr>
 
                 </tbody>
@@ -80,11 +98,15 @@
                   <tr>
                     <th>Id</th>
                     <th>Course Title</th>
-                    <th>Course Lecturer</th>
-                    <th>School</th>
-                    <th>About Course</th>
-                    <th>Total Weeks</th>
+                    <th>Content Title</th>
+                    <th>Content Details</th>
+                    <th>PDF</th>
+                    <th>Video</th>
+                    <th>Image</th>
+                    <th>Category</th>
+                    <th>Week No</th>
                     <th>Admin Editor</th>
+                    <th></th>
                   </tr>
                 </tfoot>
               </table>
