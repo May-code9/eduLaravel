@@ -37,13 +37,85 @@
       @endif
     </div>
 
+    <section class="content">
+      <div class="row">
+        <div class="col-md-8 col-md-push-2">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Search by Content Week and Number</h3>
+            </div><!-- /.box-header -->
+            <div class="box-body table-responsive">
+              <form method="post" action="{{ route('search.content') }}">
+                {{ csrf_field() }}
+                <div class="box-body ">
+                  <div class="form-group{{ $errors->has('course') ? ' has-error' : '' }}">
+                    <label>Course</label>
+                    <!-- tools box -->
+                    <select type="text" class="form-control" name="course" id="course" required>
+                      <option value="">Select the Course Title</option>
+                      @foreach($courseIds as $courseId)
+                      <option value="{{ $courseId->id }}">{{ $courseId->course }}</option>
+                      @endforeach
+                    </select>
+                    @if ($errors->has('course'))
+                    <span class="help-block">
+                      <strong>{{ $errors->first('course') }}</strong>
+                    </span>
+                    @endif
+                  </div>
+
+                    <div class="form-group{{ $errors->has('content_week') ? ' has-error' : '' }} col-md-6">
+                      <label>Week Number</label>
+                      <!-- tools box -->
+                      <select type="text" class="form-control" name="content_week" id="content_week" required>
+                        <option value="">Select the Week Number</option>
+                        @for($i = 0; $i < count(noOfWeeks()); $i++)
+                        <option value="{{ noOfWeeks()[$i] }}">{{ noOfWeeks()[$i] }}</option>
+                        @endfor
+                      </select>
+                      @if ($errors->has('content_week'))
+                      <span class="help-block">
+                        <strong>{{ $errors->first('content_week') }}</strong>
+                      </span>
+                      @endif
+                    </div>
+
+                    <div class="form-group{{ $errors->has('content_number') ? ' has-error' : '' }} col-md-6">
+                      <label>Content Number</label>
+                      <!-- tools box -->
+                      <select type="text" class="form-control" name="content_number" id="content_number">
+                        <option value="">Select the Content Number</option>
+                        @for($i = 0; $i < count(courseNo()); $i++)
+                        <option value="{{ noOfWeeks()[$i] }}">{{ courseNo()[$i] }}</option>
+                        @endfor
+                      </select>
+                      @if ($errors->has('content_number'))
+                      <span class="help-block">
+                        <strong>{{ $errors->first('content_number') }}</strong>
+                      </span>
+                      @endif
+                    </div>
+
+                </div>
+                <div class="box-footer">
+                  <button type = "submit" class="btn btn-success btn-lg glyphicon glyphicon-floppy-disk" />
+                </div>
+              </form>
+
+            </div><!-- /.box-body -->
+          </div><!-- /.box -->
+        </div>
+      </div>
+
+    </section>
+
     <!-- Main content -->
     <section class="content">
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Content</h3>
+              <h3 class="box-title">Content </h3>
             </div><!-- /.box-header -->
             <div class="box-body table-responsive">
               <table id="example1" class="table table-bordered table-striped">
@@ -69,7 +141,7 @@
                     <td>{{ $getContent->course }}</td>
                     <td>{{ $getContent->content_title }}</td>
                     <td>{!! $getContent->shortContent !!}</td>
-                    <td>{{ $getContent->content_pdf }}</td>
+                    <td><a href="/edit Content Pdf/{{ $getContent->id }}">{{ $getContent->content_pdf }}</a></td>
                     @if(is_null($getContent->content_video))
                     <td>No Video</td>
                     @else

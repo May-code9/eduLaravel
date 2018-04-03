@@ -19,6 +19,7 @@ class CreateCoursesTable extends Migration
             $table->integer('school_id');
             $table->integer('instructor_id');
             $table->string('course');
+            $table->string('course_image');
             $table->integer('total_weeks');
             $table->text('about_course');
             $table->softDeletes();

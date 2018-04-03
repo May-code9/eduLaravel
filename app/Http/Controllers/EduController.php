@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Week;
+use App\Course;
+use App\Content;
 
 class EduController extends Controller
 {
@@ -14,13 +17,49 @@ class EduController extends Controller
       $aboutActive = "active";
       return view('public.about', compact('aboutActive'));
     }
-    public function icourse() {
-      $coursesActive = "active";
-      return view('public.icourse', compact('coursesActive'));
-    }
     public function courses() {
+      $courses = Course::join('schools', 'schools.id', '=', 'courses.school_id')
+      //->join('contents', 'contents.id', '=', 'contents.course_id')
+      ->select('courses.id', 'course', 'about_course', 'course_image', 'name')
+      ->orderBy('courses.id')
+      ->get();
+
       $coursesActive = "active";
-      return view('public.courses', compact('coursesActive'));
+      return view('public.courses', compact('coursesActive', 'courses'));
+    }
+    public function icourse($id) {
+      $courses = Course::join('schools', 'schools.id', '=', 'courses.school_id')
+      ->join('instructors', 'instructors.id', '=', 'courses.instructor_id')
+      ->findOrFail($id);
+
+      $totalWeeksOfCourse = Course::where('id', $id)->pluck('total_weeks')->last();
+      //dd($totalWeeksOfCourse);
+      $week1 = Content::where('course_id', $id)->where('week_no', 1)->count();
+      $week2 = Content::where('course_id', $id)->where('week_no', 2)->count();
+      $week3 = Content::where('course_id', $id)->where('week_no', 3)->count();
+      $week4 = Content::where('course_id', $id)->where('week_no', 4)->count();
+      $week5 = Content::where('course_id', $id)->where('week_no', 5)->count();
+      $week6 = Content::where('course_id', $id)->where('week_no', 6)->count();
+
+      if ($week1 > 0) {
+        $one = 1;
+        $weekContent1s = Content::where('course_id', $id)->where('week_no', 1)->get();
+      }
+      if ($week2 > 0) {
+        $two = 2;
+        $weekContent2s = Content::where('course_id', $id)->where('week_no', 2)->get();
+      }
+      if ($week3 > 0) {
+        $three = 3;
+        $weekContent3s = Content::where('course_id', $id)->where('week_no', 3)->get();
+      }
+      if ($week4 > 0) {
+        $four = 4;
+        $weekContent4s = Content::where('course_id', $id)->where('week_no', 4)->get();
+      }
+      $coursesActive = "active";
+      return view('public.icourse', compact('coursesActive', 'courses', 'week1', 'week2', 'week3', 'week4', 'week5', 'week6',
+       'weekContent1s', 'weekContent2s', 'weekContent3s', 'weekContent4s', 'one', 'two', 'three'));
     }
     public function contact() {
       $contactActive = "active";

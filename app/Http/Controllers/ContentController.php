@@ -18,16 +18,17 @@ class ContentController extends Controller
   public function index()
   {
     $activeContent = "active";
+
     $getContents = Content::join('users', 'users.id', '=', 'contents.user_id')
     ->join('courses', 'courses.id', '=', 'contents.course_id')
     ->join('categories', 'categories.id', '=', 'contents.category_id')
     ->select('contents.id', 'course', 'category', 'content_title', 'content_text', 'content_pdf', 'content_video', 'content_image', 'week_no', 'first_name', 'last_name')
     ->orderBy('contents.id')
     ->get();
-    //dd($getContents);
+    $courseIds = Course::get();
 
     $activeContent = 'active';
-    return view('admin.layouts.content.view', compact('getContents', 'activeContent'));
+    return view('admin.layouts.content.view', compact('getContents', 'courseIds', 'activeContent'));
   }
 
   /**
@@ -86,9 +87,9 @@ class ContentController extends Controller
       $content = $request->all();
     }
     $content['content_pdf'] = $uniqueFileName;
+
     Content::create($content);
     return redirect()->back()->with("success_status", "Content Added");
-
   }
 
   /**
@@ -114,7 +115,7 @@ class ContentController extends Controller
     $getContents = Content::join('users', 'users.id', '=', 'contents.user_id')
     ->join('courses', 'courses.id', '=', 'contents.course_id')
     ->join('categories', 'categories.id', '=', 'contents.category_id')
-    ->select('contents.id', 'course', 'course_id', 'category', 'content_title', 'content_text', 'content_pdf', 'content_video', 'content_image', 'week_no', 'first_name', 'last_name')
+    ->select('contents.id', 'course', 'course_id', 'category', 'content_title', 'content_number', 'content_text', 'content_pdf', 'content_video', 'content_image', 'week_no', 'first_name', 'last_name')
     ->findOrFail($id);
 
     $courseIds = Course::get();

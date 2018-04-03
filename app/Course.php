@@ -10,7 +10,7 @@ class Course extends Model
     use SoftDeletes;
 
     protected $fillable = [
-      'user_id', 'school_id', 'course', 'total_weeks', 'about_course', 'instructor_id'
+      'user_id', 'school_id', 'course', 'total_weeks', 'about_course', 'instructor_id', 'course_image'
     ];
 
     protected $dates = [

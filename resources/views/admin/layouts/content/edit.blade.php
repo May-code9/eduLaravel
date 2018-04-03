@@ -94,6 +94,22 @@
                   @endif
                 </div>
 
+                <div class="form-group{{ $errors->has('content_number') ? ' has-error' : '' }}">
+                  <label>Content Number in Week</label>
+                  <!-- tools box -->
+                  <select type="text" class="form-control" name="content_number" id="content_number" required>
+                    <option value="{{ $getContents->content_number }}">{{ $getContents->content_number }}</option>
+                    @for($i = 0; $i < count(courseNo()); $i++)
+                    <option value="{{ noOfWeeks()[$i] }}">{{ courseNo()[$i] }}</option>
+                    @endfor
+                  </select>
+                  @if ($errors->has('content_number'))
+                  <span class="help-block">
+                    <strong>{{ $errors->first('content_number') }}</strong>
+                  </span>
+                  @endif
+                </div>
+
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"/>
 
                 <div class="form-group{{ $errors->has('content_text') ? ' has-error' : '' }}">

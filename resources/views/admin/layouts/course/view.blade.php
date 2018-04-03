@@ -54,6 +54,7 @@
                     <th>Course Lecturer</th>
                     <th>School</th>
                     <th>About Course</th>
+                    <th>Course Image</th>
                     <th>Total Weeks</th>
                     <th>Admin Editor</th>
                     <th></th>
@@ -67,6 +68,7 @@
                     <td>{{ $getCourse->instructor }}</td>
                     <td>{{ $getCourse->name }}</td>
                     <td>{!! $getCourse->shortMessage !!}</td>
+                    <td class="center"><a href="#"><img src="{{ asset('images/course/' . $getCourse->course_image) }}" width="50" height="50"></a></td>
                     <td>{{ $getCourse->total_weeks }}</td>
                     <td>{{ $getCourse->first_name }} {{ $getCourse->last_name }}</td>
                     <td class="center"><a href="/course/{{ $getCourse->id }}/edit" id="edit" class="btn btn-md btn-primary mr-2" >Edit</a></td>
@@ -83,6 +85,7 @@
                     <th>Course Lecturer</th>
                     <th>School</th>
                     <th>About Course</th>
+                    <th>Course Image</th>
                     <th>Total Weeks</th>
                     <th>Admin Editor</th>
                   </tr>

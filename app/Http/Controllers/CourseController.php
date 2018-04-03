@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use Image;
 use App\Week;
 use App\Course;
 use App\School;
@@ -21,7 +23,7 @@ class CourseController extends Controller
       $getCourses = Course::join('users', 'users.id', '=', 'courses.user_id')
       ->join('schools', 'schools.id', '=', 'courses.school_id')
       ->join('instructors', 'instructors.id', '=', 'courses.instructor_id')
-      ->select('courses.id', 'name', 'course', 'total_weeks', 'about_course', 'instructor', 'instructor_id', 'school_id', 'first_name', 'last_name')
+      ->select('courses.id', 'name', 'course', 'course_image', 'total_weeks', 'about_course', 'instructor', 'instructor_id', 'school_id', 'first_name', 'last_name')
       ->orderBy('courses.id')
       ->get();
 
@@ -50,7 +52,19 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        Course::create($request->all());
+        $photo = $request->file('course_image');
+        $imagename = time().'.'.$photo->getClientOriginalExtension();
+
+        $destinationPath = public_path('/images/course');
+        $thumb_img = Image::make($photo->getRealPath())->resize(400, 400);
+        $thumb_img->save($destinationPath.'/'.$imagename);
+
+        $course = $request->all();
+        $course['course_image'] = $imagename;
+
+        Course::create($course);
+
+        //Course::create($request->all());
         return redirect()->back()->with('success_status', 'Course Added');
     }
 
