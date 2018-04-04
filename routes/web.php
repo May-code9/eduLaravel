@@ -15,8 +15,9 @@ Auth::routes();
 
 Route::get('/', ['as'=>'edu_home', 'uses'=>'EduController@index']);
 Route::get('/about', ['as'=>'edu_about', 'uses'=>'EduController@about']);
-Route::get('/courses/{id}', ['as'=>'edu_icourse', 'uses'=>'EduController@icourse'])->middleware('login');
-Route::get('/courses', ['as'=>'edu_courses', 'uses'=>'EduController@courses']);
+Route::get('/courses', ['as'=>'edu_courses', 'uses'=>'PublicCourseController@courses']);
+Route::get('/courses/{id}', ['as'=>'edu_icourse', 'uses'=>'PublicCourseController@icourse'])->middleware('login');
+Route::get('/courses/{id}/{weekNo}/{contentId}', ['as'=>'edu_icourse', 'uses'=>'PublicCourseController@courseContent'])->middleware('login');
 Route::get('/contact', ['as'=>'edu_contact', 'uses'=>'EduController@contact']);
 Route::get('/comingSoon', ['as'=>'coming_soon', 'uses'=>'EduController@coming']);
 
@@ -33,6 +34,8 @@ Route::group(['middleware' => 'admin'], function() {
     //Courses
     Route::resource('course', 'CourseController');
     Route::resource('trashedCourse', 'CourseTrashed');
+    Route::get('/edit Course Image/{id}', ['as'=>'edit.course.image', 'uses'=>'EditImagesController@course']);
+    Route::post('/edit Course Image/{id}', ['as'=>'edit.course.image', 'uses'=>'EditImagesController@post_course']);
     //Content
     //Route::get('/content', ['as'=>'content.index', 'uses'=>'ContentController@index']);
     Route::post('/contentSearch{page?}', ['as'=>'search.content', 'uses'=>'AdminSearchController@contentSearch']);

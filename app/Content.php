@@ -16,9 +16,12 @@ class Content extends Model
     'deleted_at'
   ];
   public function getShortContentAttribute() {
-    return substr($this->content_text, 0, random_int(40, 50)) . '...';
+    return substr($this->content_text, 0, random_int(30, 40)) . '...';
   }
   public function getShortVideoAttribute() {
-    return substr($this->content_video, 0, random_int(40, 50)) . '...';
+    return substr($this->content_video, 0, random_int(30, 40)) . '...';
+  }
+  public function getShortPdfAttribute() {
+    return substr($this->content_pdf, 0, random_int(20, 30)) . '...';
   }
 }

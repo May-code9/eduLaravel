@@ -141,7 +141,7 @@
                     <td>{{ $getContent->course }}</td>
                     <td>{{ $getContent->content_title }}</td>
                     <td>{!! $getContent->shortContent !!}</td>
-                    <td><a href="/edit Content Pdf/{{ $getContent->id }}">{{ $getContent->content_pdf }}</a></td>
+                    <td><a href="/edit Content Pdf/{{ $getContent->id }}">{{ $getContent->shortPdf }}</a></td>
                     @if(is_null($getContent->content_video))
                     <td>No Video</td>
                     @else

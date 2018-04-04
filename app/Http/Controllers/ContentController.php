@@ -69,7 +69,7 @@ class ContentController extends Controller
       $imagename = time().'.'.$photo->getClientOriginalExtension();
 
       $destinationPath = public_path('/images/content');
-      $thumb_img = Image::make($photo->getRealPath())->resize(400, 400);
+      $thumb_img = Image::make($photo->getRealPath())->resize(1000, 500);
       $thumb_img->save($destinationPath.'/'.$imagename);
 
       $content = $request->all();

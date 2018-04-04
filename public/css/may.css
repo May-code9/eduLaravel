@@ -35,3 +35,16 @@
 .section-bottom-10 {
   padding-bottom: 10px;
 }
+.right {
+  text-align: right;
+}
+
+.offset-top-80 {
+  padding-top: 80px;
+}
+.code {
+  background: #f0f2f1;
+  color: #f4645f;
+  padding: 1px 5px;
+  border-radius: 3px;
+}

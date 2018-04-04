@@ -21,7 +21,7 @@ Classroom Management
           <h6 class="text-left text-bold" style="margin-bottom: 15px">Week {{$one}} </h6>
           @foreach($weekContent1s as $weekContent1)
           <ul class="list-inline list-inline-xs block-left text-left">
-            <li class="block-display"><a href="#"><span class="inset-left-10 text-dark">{{ $weekContent1->content_title }}</span></a></li>
+            <li class="block-display"><a href="/courses/{{ $weekContent1->course_id }}/{{ $weekContent1->week_no }}/{{$weekContent1->content_number}}"><span class="inset-left-10 text-dark">{{ $weekContent1->content_title }}</span></a></li>
           </ul>
           @endforeach
         @endif
@@ -30,7 +30,7 @@ Classroom Management
           <h6 class="text-left text-bold" style="margin-bottom: 15px">Week {{$two}} </h6>
           @foreach($weekContent2s as $weekContent2)
           <ul class="list-inline list-inline-xs block-left text-left">
-            <li class="block-display"><a href="#"><span class="inset-left-10 text-dark">{{ $weekContent2->content_title }}</span></a></li>
+            <li class="block-display"><a href="/courses/{{ $weekContent2->course_id }}/{{ $weekContent2->week_no }}/{{$weekContent2->content_number}}"><span class="inset-left-10 text-dark">{{ $weekContent2->content_title }}</span></a></li>
           </ul>
           @endforeach
         @endif
@@ -39,7 +39,7 @@ Classroom Management
           <h6 class="text-left text-bold" style="margin-bottom: 15px">Week {{$three}} </h6>
           @foreach($weekContent3s as $weekContent3)
           <ul class="list-inline list-inline-xs block-left text-left">
-            <li class="block-display"><a href="#"><span class="inset-left-10 text-dark">{{ $weekContent3->content_title }}</span></a></li>
+            <li class="block-display"><a href="/courses/{{ $weekContent3->course_id }}/{{ $weekContent3->week_no }}/{{$weekContent3->content_number}}"><span class="inset-left-10 text-dark">{{ $weekContent3->content_title }}</span></a></li>
           </ul>
           @endforeach
         @endif
@@ -48,7 +48,25 @@ Classroom Management
           <h6 class="text-left text-bold" style="margin-bottom: 15px">Week {{$four}} </h6>
           @foreach($weekContent4s as $weekContent4)
           <ul class="list-inline list-inline-xs block-left text-left">
-            <li class="block-display"><a href="#"><span class="inset-left-10 text-dark">{{ $weekContent4->content_title }}</span></a></li>
+            <li class="block-display"><a href="/courses/{{ $weekContent4->course_id }}/{{ $weekContent4->week_no }}/{{$weekContent4->content_number}}"><span class="inset-left-10 text-dark">{{ $weekContent4->content_title }}</span></a></li>
+          </ul>
+          @endforeach
+        @endif
+
+        @if($week5 > 0)
+          <h6 class="text-left text-bold" style="margin-bottom: 15px">Week {{$five}} </h6>
+          @foreach($weekContent5s as $weekContent5)
+          <ul class="list-inline list-inline-xs block-left text-left">
+            <li class="block-display"><a href="/courses/{{ $weekContent5->course_id }}/{{ $weekContent5->week_no }}/{{$weekContent5->content_number}}"><span class="inset-left-10 text-dark">{{ $weekContent5->content_title }}</span></a></li>
+          </ul>
+          @endforeach
+        @endif
+
+        @if($week6 > 0)
+          <h6 class="text-left text-bold" style="margin-bottom: 15px">Week {{$six}} </h6>
+          @foreach($weekContent6s as $weekContent6)
+          <ul class="list-inline list-inline-xs block-left text-left">
+            <li class="block-display"><a href="/courses/{{ $weekContent6->course_id }}/{{ $weekContent6->week_no }}/{{$weekContent6->content_number}}"><span class="inset-left-10 text-dark">{{ $weekContent6->content_title }}</span></a></li>
           </ul>
           @endforeach
         @endif
@@ -68,6 +86,7 @@ Classroom Management
                 {!! $courses->about_course !!}
               </div>
               @endif
+
             </div>
 
             <div class="offset-top-40"></div>
