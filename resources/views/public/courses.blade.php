@@ -131,9 +131,9 @@ Recommended Courses
                 </div>
                 <div class="unit-body downchange">
                   <div class="post-event-body text-lg-left">
-                    <h6 class="text-center"><a href="event-page.php">{{ $course->course }}</a></h6>
+                    <h6 class="text-center"><a href="/courses/{{ $course->id }}">{{ $course->course }}</a></h6>
                     <ul class="list-inline list-inline-xs text-center">
-                      <li><a href="team-member-profile.php"><span class="icon icon-xxs mdi mdi-account-outline text-middle"></span><span class="inset-left-10 text-dark text-middle">{{ $course->name }}</span></a></li>
+                      <li><a href="#"><span class="fa fa-university text-middle"></span><span class="inset-left-10 text-dark text-middle">{{ $course->name }}</span></a></li>
                     </ul>
                   </div>
                 </div>

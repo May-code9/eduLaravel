@@ -59,12 +59,12 @@
               <a href="{{ route('edu_home') }}" class="reveal-inline-block">
                 <div class="unit unit-xs-middle unit-lg unit-lg-horizontal unit-spacing-xxs">
                   <div class="unit-left">
-                    <img width='120' height='130' src='images/Logo-black.png' alt=''/>
+                    <img width='120' height='130' src="{{ asset('images/logo-purple.png') }}" alt=''/>
                   </div>
-                  <div class="unit-body text-lg-left">
+                  <!-- <div class="unit-body text-lg-left">
                     <div class="rd-navbar-brand-title" style="font-size:42px; color:#a81a1a;margin-top: 23px;">{{ config('app.name') }}</div>
                     <div class="rd-navbar-brand-slogan"></div>
-                  </div>
+                  </div> -->
                 </div>
               </a>
             </div>

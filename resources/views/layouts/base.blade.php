@@ -29,11 +29,9 @@
 
   @yield('content')
 
-  @if(Route::currentRouteName() == 'edu_contact')
-    @include('layouts.foot.footer')
-  @else
-    @include('layouts.foot.footer2')
-  @endif
+
+  @include('layouts.foot.footer2')
+
 </body><!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>

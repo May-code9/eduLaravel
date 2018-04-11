@@ -143,7 +143,8 @@ class ContentController extends Controller
     $user_id = $request->input('user_id');
 
     $content->update(['course_id'=>$courseId, 'content_title'=>$contentTitle, 'week_no'=>$week, 'content_text'=>$contentText, 'user_id'=>$user_id]);
-    return redirect('/content')->with("success_status", "Content Updated");
+
+    return redirect('/content')->with("success_status", "Content Updated ");
   }
 
   /**

@@ -26,7 +26,7 @@
           <li class="user-header bg-light-blue">
             <img src="{{asset('img/avatar3.png')}}" class="img-circle" alt="User Image" />
             <p>
-              @if(Auth::user()->role == 4)
+              @if($admin->role == 4)
               Admin - {{ Auth::user()->first_name }}
               @else
               User - {{ Auth::user()->first_name }}

@@ -18,12 +18,12 @@
               <a href="{{ route('edu_home') }}" class="reveal-inline-block">
                 <div class="unit unit-xs-middle unit-lg unit-lg-horizontal unit-spacing-xxs">
                   <div class="unit-left">
-                    <img width='210' height='230' src='images/logo-white.png' alt='' style="/*! width:210px; height:230px; */" />
+                    <img width='210' height='230' src="{{ asset('images/logo-white.png') }}" alt='' style="/*! width:210px; height:230px; */" />
                   </div>
-                  <div class="unit-body text-lg-left">
+                  <!-- <div class="unit-body text-lg-left">
                     <div class="rd-navbar-brand-title" style="font-size:42px; color:#a81a1a;margin-top: 23px;">{{ config('app.name') }}</div>
                     <div class="rd-navbar-brand-slogan text-light"></div>
-                  </div>
+                  </div> -->
                 </div>
               </a>
             </div>

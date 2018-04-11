@@ -1,5 +1,5 @@
 <!--RD Navbar Search-->
-<div class="rd-navbar-search" style="margin: 20px; width: 290px; ">
+<div class="rd-navbar-search" style="margin: 0px 20px; width: 290px; ">
   <form action="#" method="GET" class="form-search rd-search">
     <div class="form-group">
       <label for="rd-navbar-search-form-input" class="form-label">Find Institutions</label>
@@ -28,10 +28,10 @@
         <a href="#">Institutions</a>
       </li>
       <li class="@if(isset($coursesActive)) {{$coursesActive}} @endif">
-        <a href="{{ route('edu_courses') }}">Courses</a>
+        <a href="{{ route('edu_courses') }}">Classroom</a>
       </li>
-      <li class="">
-        <a href="#">Community</a>
+      <li class="@if(isset($bookshopActive)) {{ $bookshopActive }} @endif">
+        <a href="{{ route('edu_bookshop') }}">Bookshop</a>
       </li>
       <!-- <li><a href="#">News</a>
         <ul class="rd-navbar-dropdown">
@@ -81,7 +81,7 @@
       <li class="@if(isset($loginActive)) {{ $loginActive }} @endif">
         <a href="{{ route('login') }}">Login | Sign Up</a>
       </li>
-      @elseif(Auth::user()->role == 4)
+      @elseif($admin->role == 4)
       <li class="">
         <a href="#"> {{ Auth::user()->first_name }}</a>
         <ul class="rd-navbar-dropdown">

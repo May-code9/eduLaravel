@@ -7,7 +7,7 @@ Contact
 @section('content')
 <!-- Page Content-->
 <main class="page-content">
-  <section class="section-70 section-md-114">
+  <section class="section-70 section-md-60">
     <div class="shell">
       <div class="range range-xs-center">
         <div class="cell-xs-10 cell-md-8 text-md-left">

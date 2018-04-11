@@ -48,3 +48,9 @@
   padding: 1px 5px;
   border-radius: 3px;
 }
+.btn-pad-sm {
+  padding: 5px 10px;
+}
+.li-btn {
+  font-size: 14px;
+}

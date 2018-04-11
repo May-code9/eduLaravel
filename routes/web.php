@@ -17,7 +17,9 @@ Route::get('/', ['as'=>'edu_home', 'uses'=>'EduController@index']);
 Route::get('/about', ['as'=>'edu_about', 'uses'=>'EduController@about']);
 Route::get('/courses', ['as'=>'edu_courses', 'uses'=>'PublicCourseController@courses']);
 Route::get('/courses/{id}', ['as'=>'edu_icourse', 'uses'=>'PublicCourseController@icourse'])->middleware('login');
+Route::post('/takeCourse/{id}', ['as'=>'take.course', 'uses'=>'PublicCourseController@take_course'])->middleware('login');
 Route::get('/courses/{id}/{weekNo}/{contentId}', ['as'=>'edu_icourse', 'uses'=>'PublicCourseController@courseContent'])->middleware('login');
+Route::get('/bookshop', ['as'=>'edu_bookshop', 'uses'=>'EduController@bookshop']);
 Route::get('/contact', ['as'=>'edu_contact', 'uses'=>'EduController@contact']);
 Route::get('/comingSoon', ['as'=>'coming_soon', 'uses'=>'EduController@coming']);
 

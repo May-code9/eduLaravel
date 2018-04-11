@@ -60,7 +60,7 @@
                 <div class="form-group{{ $errors->has('course_image') ? ' has-error' : '' }}">
                   <label>Course's Image</label>
                   <input type="file" name="course_image" id="course_image" value="" required>
-                  <p style="padding-left:10px">Image ratio: 1.0 or It's Equivalent Ratio</p>
+                  <p style="padding-left:10px">Image ratio(width/height): 1.37 or It's Equivalent Ratio</p>
                   @if ($errors->has('course_image'))
                   <span class="help-block">
                     <strong>{{ $errors->first('course_image') }}</strong>

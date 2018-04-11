@@ -29,7 +29,8 @@
         "files": [
           "app/helpers/weeks.php",
           "app/helpers/uploads.php",
-          "app/helpers/courseNumber.php"
+          "app/helpers/courseNumber.php",
+          "app/helpers/courses.php"
         ]
     },
     "autoload-dev": {

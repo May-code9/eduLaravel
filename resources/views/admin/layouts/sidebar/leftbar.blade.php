@@ -14,7 +14,7 @@
 
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
-      @if (Auth::user()->role > 2)
+      @if ($admin->role > 2)
       <li class="@if(isset($activeDashboard)) {{ $activeDashboard }} @endif">
         <a href="{{ route('dashboard') }}">
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
@@ -102,7 +102,7 @@
       @endif
       <hr>
       <hr>
-      @if(Auth::user()->role == 4)
+      @if($admin->role == 4)
       <li class="treeview ">
         <a href="#">
           <i class="fa fa-user"></i> <span>Admin</span>

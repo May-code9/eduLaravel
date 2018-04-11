@@ -78,7 +78,7 @@ class EditImagesController extends Controller
       $imagename = time().'.'.$photo->getClientOriginalExtension();
 
       $destinationPath = public_path('/images/course');
-      $thumb_img = Image::make($photo->getRealPath())->resize(400, 400);
+      $thumb_img = Image::make($photo->getRealPath())->resize(370, 270);
       $thumb_img->save($destinationPath.'/'.$imagename);
 
       $user_id = $request->input('user_id');

@@ -24,4 +24,9 @@ class EduController extends Controller
     public function coming() {
       return view('public.coming-soon');
     }
+    public function bookshop()
+    {
+      $bookshopActive = "active";
+      return view('public.bookshop', compact('bookshopActive'));
+    }
 }

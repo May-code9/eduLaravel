@@ -13,11 +13,11 @@ return [
     |
     */
 
-    'name' => 'EduSpring',
+    'name' => 'Suanu',
     'location' => 'Port Harcourt',
     'number' => '07037287360',
     'number2' => '07037287360',
-    'email' => 'info@eduspring.com',
+    'email' => 'info@suanu.com',
     'founder' => 'Austine Clark',
 
     /*

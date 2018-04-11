@@ -5,15 +5,13 @@
   </div>
   <div class="shell section-60">
     <div class="range range-lg-justify range-xs-center">
-      <div class="cell-md-3 cell-lg-2">
+      <div class="cell-md-3 cell-lg-4">
         <!--Footer brand-->
         <a href="{{ route('edu_home') }}" class="reveal-inline-block">
-          <img width="206" height="223" src="images/logo-black-large.png" alt="">
+          <img width="350" height="149" src="{{ asset('images/logo-purple-full.png') }}" alt="">
         </a>
       </div>
-      <div class="cell-xs-10 cell-md-5 cell-lg-2 text-lg-left offset-top-50 offset-md-top-0">
 
-      </div>
       <div class="cell-xs-5 cell-md-5 cell-lg-2 text-lg-left offset-top-50 offset-md-top-0">
         <div class="text-subline"></div>
         <div class="offset-top-30">
@@ -61,7 +59,7 @@
             <li>
               <div class="unit unit-horizontal unit-middle unit-spacing-xs">
                 <div class="unit-body">
-                  <a href="#" class="text-dark">Contact</a>
+                  <a href="{{ route('edu_contact') }}" class="text-dark">Contact</a>
                 </div>
               </div>
             </li>
@@ -98,7 +96,7 @@
     <div class="shell section-15 section-md-25">
       <div class="range text-left range-xs-center">
         <div class="cell-md-6 cell-xs-6 coffset-top-15">
-          <p>Copyright &copy; <span id="copyright-year"></span> <a href="#" style="color: black">MyEduSpring</a> <br/> Design by <a href="#" style="color: black">Code9ners</a></p>
+          <p>Copyright &copy; <span id="copyright-year"></span> <a href="#" style="color: black">{{ config('app.name') }}</a> <br/> Design by <a href="#" style="color: black">Code9ners</a></p>
         </div>
         <div class="cell-md-6 cell-xs-6 offset-top-15" style="margin-top: -10px;">
           <ul class="list-inline list-inline-xs list-inline-madison" style="text-align: right;">
