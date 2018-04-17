@@ -76,7 +76,7 @@
   </header>
 
   <section class="breadcrumb-classic context-dark" style="background: #442b2b;">
-    <div class="shell section-30">
+    <div class="shell section-5">
       <!-- <h1 class="veil reveal-sm-block">@yield('title')</h1> -->
       <div class="">
         <ul class="list-inline list-inline-lg list-inline-dashed p">

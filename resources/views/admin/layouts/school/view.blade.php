@@ -3,7 +3,7 @@
 
 <div class="wrapper row-offcanvas row-offcanvas-left">
   <!-- Left side column. contains the logo and sidebar -->
-  @include('admin.layouts.sidebar.leftbar')
+  @include('admin.layouts.sidebar.classroom')
 
 
   <!-- Right side column. Contains the navbar and content of the page -->
@@ -43,7 +43,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Instructors</h3>
+              <h3 class="box-title">School</h3>
             </div><!-- /.box-header -->
             <div class="box-body table-responsive">
               <table id="example1" class="table table-bordered table-striped">

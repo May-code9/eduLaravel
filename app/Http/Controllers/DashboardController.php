@@ -11,4 +11,12 @@ class DashboardController extends Controller
         $activeDashboard = "active";
         return view('admin.layouts.index', compact('activeDashboard'));
     }
+    public function classroom()
+    {
+      return view('admin.layouts.index');
+    }
+    public function bookshop()
+    {
+      return view('admin.layouts.index');
+    }
 }

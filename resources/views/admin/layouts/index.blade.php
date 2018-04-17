@@ -3,19 +3,37 @@
 
 <div class="wrapper row-offcanvas row-offcanvas-left">
   <!-- Left side column. contains the logo and sidebar -->
+  @if(Route::currentRouteName() == 'dashboard')
   @include('admin.layouts.sidebar.leftbar')
+  @elseif(Route::currentRouteName() == 'admin.classroom')
+  @include('admin.layouts.sidebar.classroom')
+  @elseif(Route::currentRouteName() == 'admin.bookshop')
+  @include('admin.layouts.sidebar.bookshop')
+  @endif
 
   <!-- Right side column. Contains the navbar and content of the page -->
   <aside class="right-side">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
+        @if(Route::currentRouteName() == 'dashboard')
         Dashboard
+        @elseif(Route::currentRouteName() == 'admin.classroom')
+        Classroom
+        @elseif(Route::currentRouteName() == 'admin.bookshop')
+        Bookshop
+        @endif
         <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+        @if(Route::currentRouteName() == 'dashboard')
         <li class="active">Dashboard</li>
+        @elseif(Route::currentRouteName() == 'admin.classroom')
+        <li class="active">Classroom</li>
+        @elseif(Route::currentRouteName() == 'admin.bookshop')
+        <li class="active">Bookshop</li>
+        @endif
       </ol>
     </section>
 

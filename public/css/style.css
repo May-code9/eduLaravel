@@ -3095,11 +3095,11 @@ mark, .mark {
 }
 
 .list-inline-dark a {
-  color: #b1b1b1;
+  color: #ffffff;
 }
 
 .list-inline-dark a:hover {
-  color: #5c1140;
+  color: #ffffff;
 }
 
 .list-inline-madison a:hover {
@@ -17062,7 +17062,7 @@ h1 .label-custom, h2 .label-custom, h3 .label-custom, h4 .label-custom, h5 .labe
 .product-body {
   position: relative;
   overflow: hidden;
-  padding: 37px;
+  padding: 17px;
 }
 
 .product-body p {

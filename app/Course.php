@@ -18,6 +18,6 @@ class Course extends Model
     ];
 
     public function getShortMessageAttribute() {
-      return substr($this->about_course, 0, random_int(40, 50)) . '...';
+      return substr($this->about_course, 0, random_int(30, 40)) . '...';
     }
 }

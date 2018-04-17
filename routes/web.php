@@ -15,7 +15,7 @@ Auth::routes();
 
 Route::get('/', ['as'=>'edu_home', 'uses'=>'EduController@index']);
 Route::get('/about', ['as'=>'edu_about', 'uses'=>'EduController@about']);
-Route::get('/courses', ['as'=>'edu_courses', 'uses'=>'PublicCourseController@courses']);
+Route::get('/classroom', ['as'=>'edu_courses', 'uses'=>'PublicCourseController@classroom']);
 Route::get('/courses/{id}', ['as'=>'edu_icourse', 'uses'=>'PublicCourseController@icourse'])->middleware('login');
 Route::post('/takeCourse/{id}', ['as'=>'take.course', 'uses'=>'PublicCourseController@take_course'])->middleware('login');
 Route::get('/courses/{id}/{weekNo}/{contentId}', ['as'=>'edu_icourse', 'uses'=>'PublicCourseController@courseContent'])->middleware('login');
@@ -25,6 +25,10 @@ Route::get('/comingSoon', ['as'=>'coming_soon', 'uses'=>'EduController@coming'])
 
 Route::group(['middleware' => 'admin'], function() {
     Route::get('/dashboard', ['as'=>'dashboard', 'uses'=>'DashboardController@index']);
+
+    Route::get('/classboard', ['as'=>'admin.classroom', 'uses'=>'DashboardController@classroom']);
+
+    Route::get('/bookboard', ['as'=>'admin.bookshop', 'uses'=>'DashboardController@bookshop']);
     //Instructor
     Route::resource('instructor', 'InstructorController');
     Route::resource('trashedInstructor', 'InstructorTrashed');

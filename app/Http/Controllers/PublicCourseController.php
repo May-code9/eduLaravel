@@ -10,7 +10,7 @@ use App\UserCourse;
 
 class PublicCourseController extends Controller
 {
-  public function courses() {
+  public function classroom() {
     $courses = Course::join('schools', 'schools.id', '=', 'courses.school_id')
     //->join('contents', 'contents.id', '=', 'contents.course_id')
     ->select('courses.id', 'course', 'about_course', 'course_image', 'name')
