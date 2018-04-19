@@ -2,7 +2,7 @@
 <div class="rd-navbar-search" style="margin: 0px 20px; width: 290px; ">
   <form action="#" method="GET" class="form-search rd-search">
     <div class="form-group">
-      <label for="rd-navbar-search-form-input" class="form-label">Find Institutions</label>
+      <label for="rd-navbar-search-form-input" class="form-label">Search</label>
       <input id="rd-navbar-search-form-input" type="text" name="search" autocomplete="off" class="form-search-input form-control" style="border-radius: 5px;"/>
       <div id="rd-search-results-live" class="rd-search-results-live"></div>
     </div>

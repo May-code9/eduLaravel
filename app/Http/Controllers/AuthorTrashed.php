@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Instructor;
+use App\Author;
 
-class InstructorTrashed extends Controller
+class AuthorTrashed extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +14,12 @@ class InstructorTrashed extends Controller
      */
     public function index()
     {
-      $activeInstructor = "active";
-      $getInstructors = Instructor::join('users', 'users.id', '=', 'instructors.user_id')
-      ->select('instructors.id', 'instructor', 'about_instructor', 'instructor_image', 'first_name', 'last_name')->onlyTrashed()->get();
-
-      return view('admin.layouts.instructor.trash.view', compact('activeInstructor', 'getInstructors'));
+      $activeAuthors = "active";
+      $getAuthors = Author::join('users', 'users.id', '=', 'authors.user_id')
+      ->select('authors.id', 'first_name', 'last_name', 'author_name', 'about_author', 'author_image')
+      ->onlyTrashed()
+      ->get();
+      return view('admin.layouts.author.trash.view', compact('activeAuthors', 'getAuthors'));
     }
 
     /**
@@ -61,10 +62,10 @@ class InstructorTrashed extends Controller
      */
     public function edit($id)
     {
-      $instructor = Instructor::onlyTrashed()->findOrFail($id);
+      $author = Author::onlyTrashed()->findOrFail($id);
 
-      $activeInstructor = 'active';
-      return view('admin.layouts.instructor.trash.edit', compact('activeInstructor', 'instructor'));
+      $activeAuthor = 'active';
+      return view('admin.layouts.author.trash.edit', compact('activeAuthor', 'author'));
     }
 
     /**
@@ -76,8 +77,8 @@ class InstructorTrashed extends Controller
      */
     public function update(Request $request, $id)
     {
-        $instructor = Instructor::withTrashed()->findOrFail($id)->restore();
-        return redirect('/trashedInstructor')->with("success_status", "Instructor Restored");
+      $author = Author::withTrashed()->findOrFail($id)->restore();
+      return redirect('/trashedAuthor')->with("success_status", "Author Restored");
     }
 
     /**
@@ -88,8 +89,8 @@ class InstructorTrashed extends Controller
      */
     public function destroy($id)
     {
-        $instructor = Instructor::withTrashed()->findOrFail($id);
-        $instructor->forceDelete();
-        return redirect('/trashedInstructor')->with("failure_status", "Instructor Deleted");
+      $author = Author::withTrashed()->findOrFail($id);
+      $author->forceDelete();
+      return redirect('/trashedAuthor')->with("failure_status", "Author Deleted");
     }
 }

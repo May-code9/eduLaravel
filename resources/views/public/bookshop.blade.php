@@ -19,13 +19,13 @@ Bookshop
             <li class="block-display section-5"><a href="#"><span class="text-dark text-bold size-18">Book Reviews</span></a></li>
           </ul>
         </div>
-        <!-- <div class="text-subline"></div> -->
 
       </div>
 
       <div class="section-md-40" style="padding-top: 10px" >
         <div class="margin-left">
           <h4 class="text-left text-bold" style="margin-bottom: 15px">Books Categories</h4>
+          <div class="text-subline"></div>
           <ul class="list-inline list-inline-xs block-left text-left pt">
             <li class="block-display"><a href="#"><span class="text-dark text-bold size-18">Action and Adventure</span></a></li>
             <li class="block-display"><a href="#"><span class="text-dark text-bold size-18">Art & Poetry</span></a></li>
@@ -48,6 +48,7 @@ Bookshop
       <div class="section-md-40" style="padding-top: 10px" >
         <div class="margin-left">
           <h4 class="text-left text-bold" style="margin-bottom: 15px">Others</h4>
+          <div class="text-subline"></div>
           <ul class="list-inline list-inline-xs block-left text-left pt">
             <li class="block-display"><a href="#"><span class="text-dark text-bold size-18">Bibles & Devotionals</span></a></li>
             <li class="block-display"><a href="#"><span class="text-dark text-bold size-18">Biographies & Autobiographies</span></a></li>
@@ -169,6 +170,7 @@ Bookshop
 
 
       <!-- <div class="text-subline"></div> -->
+      <hr>
 
       <div class=" section-10 section-bottom-30" >
         <h4 class="text-bold" style="margin-bottom: 5px; text-align: left; padding-left: 20px">Best Seller</h4>
@@ -268,6 +270,8 @@ Bookshop
           </a>
         </div>
       </div>
+
+      <hr>
 
       <div class=" section-10 section-bottom-30" >
         <h4 class="text-bold" style="margin-bottom: 5px; text-align: left; padding-left: 20px">Top from Book Categories</h4>

@@ -29,6 +29,11 @@ Route::group(['middleware' => 'admin'], function() {
     Route::get('/classboard', ['as'=>'admin.classroom', 'uses'=>'DashboardController@classroom']);
 
     Route::get('/bookboard', ['as'=>'admin.bookshop', 'uses'=>'DashboardController@bookshop']);
+
+    /**
+     * ClassBoard Category
+     *
+    */
     //Instructor
     Route::resource('instructor', 'InstructorController');
     Route::resource('trashedInstructor', 'InstructorTrashed');
@@ -43,10 +48,7 @@ Route::group(['middleware' => 'admin'], function() {
     Route::get('/edit Course Image/{id}', ['as'=>'edit.course.image', 'uses'=>'EditImagesController@course']);
     Route::post('/edit Course Image/{id}', ['as'=>'edit.course.image', 'uses'=>'EditImagesController@post_course']);
     //Content
-    //Route::get('/content', ['as'=>'content.index', 'uses'=>'ContentController@index']);
     Route::post('/contentSearch{page?}', ['as'=>'search.content', 'uses'=>'AdminSearchController@contentSearch']);
-    //Route::get('/content/create', ['as'=>'content.create', 'uses'=>'ContentController@create']);
-    //Route::post('/content/save', ['as'=>'content.save', 'uses'=>'ContentController@save']);
     Route::resource('content', 'ContentController');
     Route::resource('trashedContent', 'ContentTrashed');
     Route::get('/edit Content Image/{id}', ['as'=>'edit.content.image', 'uses'=>'EditImagesController@content']);
@@ -55,4 +57,19 @@ Route::group(['middleware' => 'admin'], function() {
     Route::post('/edit Content Video/{id}', ['as'=>'edit.content.video', 'uses'=>'EditVideoController@post_video']);
     Route::get('/edit Content Pdf/{id}', ['as'=>'edit.content.pdf', 'uses'=>'EditPdfController@pdf']);
     Route::post('/edit Content Pdf/{id}', ['as'=>'edit.content.pdf', 'uses'=>'EditPdfController@post_pdf']);
+
+    /**
+     * BookBoard Category
+     *
+    */
+
+    //Authors
+    Route::resource('author', 'AuthorController');
+    Route::resource('trashedAuthor', 'AuthorTrashed');
+    Route::get('/edit Author Image/{id}', ['as'=>'edit.author.image', 'uses'=>'EditImagesController@author']);
+    Route::post('/edit Author Image/{id}', ['as'=>'edit.author.image', 'uses'=>'EditImagesController@post_author']);
+
+    //Books
+    Route::resource('book', 'BookController');
+    Route::resource('bookCategory', 'BookCategoryController');
 });

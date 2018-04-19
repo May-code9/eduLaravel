@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Instructor;
+use App\BookCategory;
 
-class InstructorTrashed extends Controller
+class BookCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +14,11 @@ class InstructorTrashed extends Controller
      */
     public function index()
     {
-      $activeInstructor = "active";
-      $getInstructors = Instructor::join('users', 'users.id', '=', 'instructors.user_id')
-      ->select('instructors.id', 'instructor', 'about_instructor', 'instructor_image', 'first_name', 'last_name')->onlyTrashed()->get();
-
-      return view('admin.layouts.instructor.trash.view', compact('activeInstructor', 'getInstructors'));
+      $activeCategory = "active";
+      $getBookCategories = BookCategory::join('users', 'users.id', '=', 'book_categories.user_id')
+      ->select('book_categories.id', 'first_name', 'last_name', 'book_category')
+      ->get();
+      return view('admin.layouts.category.view', compact('activeCategory', 'getBookCategories'));
     }
 
     /**
@@ -28,7 +28,8 @@ class InstructorTrashed extends Controller
      */
     public function create()
     {
-        //
+      $activeCategory = 'active';
+      return view('admin.layouts.category.add', compact('activeCategory'));
     }
 
     /**
@@ -39,7 +40,8 @@ class InstructorTrashed extends Controller
      */
     public function store(Request $request)
     {
-        //
+        BookCategory::create($request->all());
+        return redirect()->back()->with("success_status", "Book Category Added");
     }
 
     /**
@@ -61,10 +63,10 @@ class InstructorTrashed extends Controller
      */
     public function edit($id)
     {
-      $instructor = Instructor::onlyTrashed()->findOrFail($id);
+        $activeCategory = "active";
+        $bookCategory = BookCategory::findOrFail($id);
+        return view('admin.layouts.category.edit', compact('activeCategory', 'bookCategory'));
 
-      $activeInstructor = 'active';
-      return view('admin.layouts.instructor.trash.edit', compact('activeInstructor', 'instructor'));
     }
 
     /**
@@ -76,8 +78,9 @@ class InstructorTrashed extends Controller
      */
     public function update(Request $request, $id)
     {
-        $instructor = Instructor::withTrashed()->findOrFail($id)->restore();
-        return redirect('/trashedInstructor')->with("success_status", "Instructor Restored");
+        $bookCategory = BookCategory::findOrFail($id);
+        $bookCategory->update($request->all());
+        return redirect('/bookCategory')->with('success_status', 'Book Category Updated');
     }
 
     /**
@@ -88,8 +91,7 @@ class InstructorTrashed extends Controller
      */
     public function destroy($id)
     {
-        $instructor = Instructor::withTrashed()->findOrFail($id);
-        $instructor->forceDelete();
-        return redirect('/trashedInstructor')->with("failure_status", "Instructor Deleted");
+       BookCategory::destroy($id);
+       return redirect('/bookCategory')->with('failure_status', 'Book Category Moved to Trash');
     }
 }

@@ -27,19 +27,32 @@
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-edit"></i> Add</a></li>
-          <li><a href="#"><i class="fa fa-search"></i> View</a></li>
+          <li><a href="{{ route('author.create') }}"><i class="fa fa-edit"></i> Add</a></li>
+          <li><a href="{{ route('author.index') }}"><i class="fa fa-search"></i> View</a></li>
+          <li><a href="{{ route('trashedAuthor.index') }}"><i class="fa fa-trash"></i> Trash</a></li>
+        </ul>
+      </li>
+
+      <li class="treeview @if(isset($activeCategory)) {{ $activeCategory }} @endif">
+        <a href="#">
+          <i class="fa fa-sitemap"></i> <span>Category</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="{{ route('bookCategory.create') }}"><i class="fa fa-edit"></i> Add</a></li>
+          <li><a href="{{ route('bookCategory.index') }}"><i class="fa fa-search"></i> View</a></li>
           <li><a href="#"><i class="fa fa-trash"></i> Trash</a></li>
         </ul>
       </li>
+
       <li class="treeview @if(isset($activeBooks)) {{ $activeBooks }} @endif">
         <a href="#">
           <i class="fa fa-book"></i> <span>Books</span>
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-edit"></i> Add</a></li>
-          <li><a href="#"><i class="fa fa-search"></i> View</a></li>
+          <li><a href="{{ route('book.create') }}"><i class="fa fa-edit"></i> Add</a></li>
+          <li><a href="{{ route('book.index') }}"><i class="fa fa-search"></i> View</a></li>
           <li><a href="#"><i class="fa fa-trash"></i> Trash</a></li>
         </ul>
       </li>
@@ -67,19 +80,6 @@
           <li><a href="#"><i class="fa fa-trash"></i> Trash</a></li>
         </ul>
       </li>
-
-      <li class="treeview @if(isset($activeCategory)) {{ $activeCategory }} @endif">
-        <a href="#">
-          <i class="fa fa-sitemap"></i> <span>Category</span>
-          <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-edit"></i> Add</a></li>
-          <li><a href="#"><i class="fa fa-search"></i> View</a></li>
-          <li><a href="#"><i class="fa fa-trash"></i> Trash</a></li>
-        </ul>
-      </li>
-
       @endif
       <hr>
       <hr>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Image;
 use App\Content;
 use App\Course;
+use App\Author;
 use App\Instructor;
 
 class EditImagesController extends Controller
@@ -85,5 +86,29 @@ class EditImagesController extends Controller
 
       $course->update(['course_image'=>$imagename, 'user_id'=>$user_id]);
       return redirect('/course')->with("success_status", "Course Image Updated");
+    }
+    public function author($id)
+    {
+      $author = Author::findOrFail($id);
+      $activeAuthor = 'active';
+      return view('admin.layouts.author.editImage', compact('activeAuthor', 'author'));
+    }
+    public function post_author(Request $request, $id)
+    {
+      $request->validate([
+        'author_image' => 'required|mimes:jpeg,png|max:1000'
+      ]);
+      $author = Author::findOrFail($id);
+      $photo = $request->file('author_image');
+      $imagename = time().'.'.$photo->getClientOriginalExtension();
+
+      $destinationPath = public_path('/images/authors');
+      $thumb_img = Image::make($photo->getRealPath())->resize(400, 400);
+      $thumb_img->save($destinationPath.'/'.$imagename);
+
+      $user_id = $request->input('user_id');
+
+      $author->update(['author_image'=>$imagename, 'user_id'=>$user_id]);
+      return redirect('/author')->with("success_status", "Author's Image Updated");
     }
 }

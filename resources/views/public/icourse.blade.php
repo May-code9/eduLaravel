@@ -163,7 +163,7 @@ Course/{{$courses->course}}
               <div class="offset-top-40"></div>
               <h4 class="text-bold">Taking Course</h4>
               <div class="text-subline"></div>
-              <p>To gain access to {{ $courses->course }} click the <code>Take Course</code> button below. This invariably means you have enrolled for the {{ $courses->course }} course</p>
+              <p>To gain access to <span class="text-bold">{{ $courses->course }}</span> click the <code>Take Course</code> button below. This invariably means you have enrolled for the {{ $courses->course }} course</p>
               <div class="offset-top-30">
                 <a href="/takeCourse/{{ $courses->id }}" onclick="event.preventDefault(); document.getElementById('take-course').submit();" class="btn btn-primary">Take Course</a>
                 <form id="take-course" action="/takeCourse/{{ $courses->id }}" method="POST" style="display: none;">
