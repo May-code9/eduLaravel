@@ -3,7 +3,7 @@
 
 <div class="wrapper row-offcanvas row-offcanvas-left">
   <!-- Left side column. contains the logo and sidebar -->
-  @include('admin.layouts.sidebar.classroom')
+  @include('admin.layouts.sidebar.bookshop')
 
   <!-- Right side column. Contains the navbar and content of the page -->
   <aside class="right-side">
@@ -43,76 +43,85 @@
           <!-- general form elements -->
           <div class="box box-success">
             <div class="box-header">
-              <h3 class="box-title">Edit Course Content</h3>
+              <h3 class="box-title">Restore/Delete Book</h3>
             </div><!-- /.box-header -->
 
             <!-- form start -->
-            <form method="post" action="/trashedContent/{{ $getContents->id }}" enctype="multipart/form-data">
+            <form method="post" action="/trashedBook/{{ $book->id }}">
               {{ method_field('PUT') }}
               {{ csrf_field() }}
               <div class="box-body">
-                <div class="form-group{{ $errors->has('course_id') ? ' has-error' : '' }}">
-                  <label>Title of Course</label>
-                  <select type="text" class="form-control" name="course_id" id="course_id" disabled>
-                    <option value="{{ $getContents->course_id }}">{{ $getContents->course }}</option>
-                    <option disabled>---------------------------------------</option>
-                    @foreach($courseIds as $courseId)
-                    <option value="{{ $courseId->id }}">{{ $courseId->course }}</option>
+                <div class="form-group{{ $errors->has('book_name') ? ' has-error' : '' }}">
+                  <label>Book Title</label>
+                  <input type="text" name="book_name" class="form-control" value="{{ $book->book_name }}" placeholder="Enter..." disabled/>
+                  @if ($errors->has('book_name'))
+                  <span class="help-block">
+                    <strong>{{ $errors->first('book_name') }}</strong>
+                  </span>
+                  @endif
+                </div>
+
+                <div class="form-group{{ $errors->has('author_name') ? ' has-error' : '' }}">
+                  <label>Author</label>
+                  <select type="text" class="form-control" name="author_id" id="author_id" disabled>
+                    <option value="{{ $book->author_id }}">{{ $book->author_name }}</option>
+                    <option value="" disabled>Select the Author's Name</option>
+                    @foreach($getAuthors as $getAuthor)
+                    <option value="{{ $getAuthor->id }}">{{ $getAuthor->author_name }}</option>
                     @endforeach
                   </select>
-                  @if ($errors->has('course_id'))
+                  @if ($errors->has('author_id'))
                   <span class="help-block">
-                    <strong>{{ $errors->first('course_id') }}</strong>
+                    <strong>{{ $errors->first('author_id') }}</strong>
                   </span>
                   @endif
                 </div>
 
-                <div class="form-group{{ $errors->has('content_title') ? ' has-error' : '' }}">
-                  <label>Content Title</label>
+                <div class="form-group{{ $errors->has('about_book') ? ' has-error' : '' }}">
+                  <label>About Book</label>
                   <!-- tools box -->
-                  <input type="text" name="content_title" class="form-control" value="{{ $getContents->content_title }}" disabled/>
-                  @if ($errors->has('content_title'))
+                  <textarea id="editor1" name="about_book" placeholder="Enter ..." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" disabled>{{ $book->about_book }}</textarea>
+                  @if ($errors->has('about_book'))
                   <span class="help-block">
-                    <strong>{{ $errors->first('content_title') }}</strong>
+                    <strong>{{ $errors->first('about_book') }}</strong>
                   </span>
                   @endif
                 </div>
 
-                <div class="form-group{{ $errors->has('week_no') ? ' has-error' : '' }}">
-                  <label>Week Number</label>
-                  <select type="text" class="form-control" name="week_no" id="week_no" disabled>
-                    <option value="{{ $getContents->week_no }}">{{ $getContents->week_no }}</option>
-                    <option disabled>---------------------------------------</option>
-                    @for($i = 0; $i < count(noOfWeeks()); $i++)
-                    <option value="{{ noOfWeeks()[$i] }}">{{ noOfWeeks()[$i] }}</option>
-                    @endfor
+                <div class="form-group{{ $errors->has('book_category_id') ? ' has-error' : '' }}">
+                  <label>Book Category</label>
+                  <select type="text" class="form-control" name="book_category_id" id="book_category_id" disabled>
+                    <option value="{{ $book->book_category_id }}">{{ $book->book_category }}</option>
+                    <option value="" disabled>Select the Book Category</option>
+                    @foreach($getBookCategories as $getBookCategory)
+                    <option value="{{ $getBookCategory->id }}">{{ $getBookCategory->book_category }}</option>
+                    @endforeach
                   </select>
-                  @if ($errors->has('week_no'))
+                  @if ($errors->has('book_category_id'))
                   <span class="help-block">
-                    <strong>{{ $errors->first('week_no') }}</strong>
+                    <strong>{{ $errors->first('book_category_id') }}</strong>
+                  </span>
+                  @endif
+                </div>
+
+                <div class="form-group{{ $errors->has('book_cost') ? ' has-error' : '' }}">
+                  <label>Book Cost</label>
+                  <input type="text" name="book_cost" class="form-control" value="{{ $book->book_cost }}" placeholder="Enter..." disabled/>
+                  @if ($errors->has('book_cost'))
+                  <span class="help-block">
+                    <strong>{{ $errors->first('book_cost') }}</strong>
                   </span>
                   @endif
                 </div>
 
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"/>
 
-                <div class="form-group{{ $errors->has('content_text') ? ' has-error' : '' }}">
-                  <label>Content Text</label>
-                  <!-- tools box -->
-                  <textarea id="editor1" name="content_text" placeholder="Enter ..." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" disabled>{{ $getContents->content_text }}</textarea>
-                  @if ($errors->has('content_text'))
-                  <span class="help-block">
-                    <strong>{{ $errors->first('content_text') }}</strong>
-                  </span>
-                  @endif
-                </div>
-
               </div>
               <div class="box-footer col-md-6">
-                <button type = "submit" class="btn btn-warning btn-lg glyphicon glyphicon-floppy-disk"> Restore</button>
+                <button type = "submit" class="btn btn-success btn-lg glyphicon glyphicon-floppy-disk" > Restore</button>
               </div>
             </form>
-            <form action="/trashedContent/{{ $getContents->id }}" method="POST">
+            <form action="/trashedBook/{{ $book->id }}" method="POST">
               {{ csrf_field() }}
               {{ method_field('DELETE') }}
 

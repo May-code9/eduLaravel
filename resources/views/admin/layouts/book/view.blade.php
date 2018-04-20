@@ -53,9 +53,11 @@
                     <th>Id</th>
                     <th>Book Title</th>
                     <th>Book Details</th>
+                    <th>Author</th>
                     <th>PDF</th>
                     <th>Image</th>
                     <th>Category</th>
+                    <th>Cost</th>
                     <th>Admin Editor</th>
                     <th></th>
                   </tr>
@@ -65,16 +67,18 @@
                   <tr>
                     <td>{{ $getBook->id }}</td>
                     <td>{{ $getBook->book_name }}</td>
-                    <td>{!! $getBook->about_book !!}</td>
-                    <td><a href="/edit Content Pdf/{{ $getBook->id }}" title="{{ $getBook->book_pdf }}">{{ $getBook->book_pdf }}</a></td>
+                    <td>{!! $getBook->shortAboutBook !!}</td>
+                    <td>{{ $getBook->author_name }}</td>
+                    <td><a href="/edit Book Pdf/{{ $getBook->id }}" title="{{ $getBook->book_pdf }}">{{ $getBook->shortPdf }}</a></td>
                     @if(is_null($getBook->book_image))
                     <td>No Image</td>
                     @else
-                    <td class="center"><a href="/edit Content Image/{{ $getBook->id }}"><img src="{{ asset('images/content/' . $getBook->content_image) }}" width="50" height="50"></a></td>
+                    <td class="center"><a href="/edit Book Image/{{ $getBook->id }}"><img src="{{ asset('images/books/' . $getBook->book_image) }}" width="50" height="50"></a></td>
                     @endif
                     <td>{{ $getBook->book_category }}</td>
+                    <td>{{ $getBook->book_cost }}</td>
                     <td>{{ $getBook->first_name }} {{ $getBook->last_name }}</td>
-                    <td class="center"><a href="/content/{{ $getBook->id }}/edit" id="edit" class="btn btn-md btn-primary mr-2" >Edit</a></td>
+                    <td class="center"><a href="/book/{{ $getBook->id }}/edit" id="edit" class="btn btn-md btn-primary mr-2" >Edit</a></td>
                   </tr>
 
                 </tbody>
@@ -86,9 +90,11 @@
                     <th>Id</th>
                     <th>Book Title</th>
                     <th>Book Details</th>
+                    <th>Author</th>
                     <th>PDF</th>
                     <th>Image</th>
                     <th>Category</th>
+                    <th>Cost</th>
                     <th>Admin Editor</th>
                     <th></th>
                   </tr>

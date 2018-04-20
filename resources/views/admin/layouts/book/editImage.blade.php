@@ -3,7 +3,7 @@
 
 <div class="wrapper row-offcanvas row-offcanvas-left">
   <!-- Left side column. contains the logo and sidebar -->
-  @include('admin.layouts.sidebar.classroom')
+  @include('admin.layouts.sidebar.bookshop')
 
   <!-- Right side column. Contains the navbar and content of the page -->
   <aside class="right-side">
@@ -43,27 +43,27 @@
           <!-- general form elements -->
           <div class="box box-warning">
             <div class="box-header">
-              <h3 class="box-title">Edit Course Content Image</h3>
+              <h3 class="box-title">Edit Book Image</h3>
             </div><!-- /.box-header -->
 
             <!-- form start -->
-            <form method="post" action="/edit Content Image/{{ $content->id }}" enctype="multipart/form-data">
+            <form method="post" action="/edit Book Image/{{ $book->id }}" enctype="multipart/form-data">
               {{ csrf_field() }}
               <div class="box-body">
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"/>
 
                 <div class="form-group">
-                  <p>Content's Current Image</p>
-                  <img class="img-responsive" src="{{ asset('images/content/' . $content->content_image) }}" >
+                  <p>Book's Current Image</p>
+                  <img class="img-responsive" src="{{ asset('images/books/' . $book->book_image) }}" >
                 </div>
 
-                <div class="form-group{{ $errors->has('content_image') ? ' has-error' : '' }}">
-                  <label>Content's Image</label>
-                  <input type="file" name="content_image" id="content_image" value="" required>
-                  <p style="padding-left:10px">Image ratio (width/height): 2.0 or It's Equivalent Ratio</p>
-                  @if ($errors->has('content_image'))
+                <div class="form-group{{ $errors->has('book_image') ? ' has-error' : '' }}">
+                  <label>Book's Image</label>
+                  <input type="file" name="book_image" id="book_image" value="" required>
+                  <p style="padding-left:10px">Image ratio (width/height): 1.0 or It's Equivalent Ratio</p>
+                  @if ($errors->has('book_image'))
                   <span class="help-block">
-                    <strong>{{ $errors->first('content_image') }}</strong>
+                    <strong>{{ $errors->first('book_image') }}</strong>
                   </span>
                   @endif
                 </div>

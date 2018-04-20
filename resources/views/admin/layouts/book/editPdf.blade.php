@@ -3,7 +3,7 @@
 
 <div class="wrapper row-offcanvas row-offcanvas-left">
   <!-- Left side column. contains the logo and sidebar -->
-  @include('admin.layouts.sidebar.classroom')
+  @include('admin.layouts.sidebar.bookshop')
 
   <!-- Right side column. Contains the navbar and content of the page -->
   <aside class="right-side">
@@ -43,27 +43,26 @@
           <!-- general form elements -->
           <div class="box box-warning">
             <div class="box-header">
-              <h3 class="box-title">Edit Course Content Image</h3>
+              <h3 class="box-title">Edit Book Image</h3>
             </div><!-- /.box-header -->
 
             <!-- form start -->
-            <form method="post" action="/edit Content Pdf/{{ $content->id }}" enctype="multipart/form-data">
+            <form method="post" action="/edit Book Pdf/{{ $book->id }}" enctype="multipart/form-data">
               {{ csrf_field() }}
               <div class="box-body">
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"/>
 
                 <div class="form-group">
-                  <p>Content's Current PDF</p>
-                  <embed src="{{ asset('pdf/' . $content->content_pdf) }}" type="application/pdf" width="100%" height="350px"/>
+                  <p>Book's Current PDF</p>
+                  <embed src="{{ asset('pdf/' . $book->book_pdf) }}" type="application/pdf" width="100%" height="350px"/>
                 </div>
 
-                <div class="form-group{{ $errors->has('content_pdf') ? ' has-error' : '' }}">
-                  <label>Change Content's PDF</label>
-                  <input type="file" name="content_pdf" id="content_pdf" value="" required>
-                  <p style="padding-left:10px">Image ratio: 1.0 or It's Equivalent Ratio</p>
-                  @if ($errors->has('content_pdf'))
+                <div class="form-group{{ $errors->has('book_pdf') ? ' has-error' : '' }}">
+                  <label>Change Book's PDF</label>
+                  <input type="file" name="book_pdf" id="book_pdf" value="" required>
+                  @if ($errors->has('book_pdf'))
                   <span class="help-block">
-                    <strong>{{ $errors->first('content_pdf') }}</strong>
+                    <strong>{{ $errors->first('book_pdf') }}</strong>
                   </span>
                   @endif
                 </div>

@@ -41,7 +41,7 @@
         <ul class="treeview-menu">
           <li><a href="{{ route('bookCategory.create') }}"><i class="fa fa-edit"></i> Add</a></li>
           <li><a href="{{ route('bookCategory.index') }}"><i class="fa fa-search"></i> View</a></li>
-          <li><a href="#"><i class="fa fa-trash"></i> Trash</a></li>
+          <li><a href="{{ route('trashedBookCategory.index') }}"><i class="fa fa-trash"></i> Trash</a></li>
         </ul>
       </li>
 
@@ -53,7 +53,7 @@
         <ul class="treeview-menu">
           <li><a href="{{ route('book.create') }}"><i class="fa fa-edit"></i> Add</a></li>
           <li><a href="{{ route('book.index') }}"><i class="fa fa-search"></i> View</a></li>
-          <li><a href="#"><i class="fa fa-trash"></i> Trash</a></li>
+          <li><a href="{{ route('trashedBook.index') }}"><i class="fa fa-trash"></i> Trash</a></li>
         </ul>
       </li>
 

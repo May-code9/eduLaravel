@@ -78,6 +78,8 @@
                 </tfoot>
               </table>
 
+              {{ $getBookCategories->links() }}
+
             </div><!-- /.box-body -->
           </div><!-- /.box -->
         </div>

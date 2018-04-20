@@ -3,7 +3,7 @@
 
 <div class="wrapper row-offcanvas row-offcanvas-left">
   <!-- Left side column. contains the logo and sidebar -->
-  @include('admin.layouts.sidebar.classroom')
+  @include('admin.layouts.sidebar.bookshop')
 
 
   <!-- Right side column. Contains the navbar and content of the page -->
@@ -37,74 +37,64 @@
       @endif
     </div>
 
+
     <!-- Main content -->
     <section class="content">
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Content</h3>
+              <h3 class="box-title">Trashed Books </h3>
             </div><!-- /.box-header -->
             <div class="box-body table-responsive">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
                     <th>Id</th>
-                    <th>Course Title</th>
-                    <th>Content Title</th>
-                    <th>Content Details</th>
+                    <th>Book Title</th>
+                    <th>Book Details</th>
+                    <th>Author</th>
                     <th>PDF</th>
-                    <th>Video</th>
                     <th>Image</th>
                     <th>Category</th>
-                    <th>Week No</th>
+                    <th>Cost</th>
                     <th>Admin Editor</th>
                     <th></th>
                   </tr>
                 </thead>
-                @forelse($getContents as $getContent)
+                @forelse($getBooks as $getBook)
                 <tbody>
                   <tr>
-                    <td>{{ $getContent->id }}</td>
-                    <td>{{ $getContent->course }}</td>
-                    <td>{{ $getContent->content_title }}</td>
-                    <td>{!! $getContent->shortContent !!}</td>
-                    <td>{{ $getContent->content_pdf }}</td>
-                    @if(is_null($getContent->content_video))
-                    <td>No Video</td>
-                    @else
-                    <td><a href="/content/{{ $getContent->id }}/edit">
-                      <video width="200" height="150">
-                       <source src="{{ asset('video/' . $getContent->content_video) }}" type="video/mp4">
-                      </video></a>
-                    </td>
-                    @endif
-                    @if(is_null($getContent->content_image))
+                    <td>{{ $getBook->id }}</td>
+                    <td>{{ $getBook->book_name }}</td>
+                    <td>{!! $getBook->shortAboutBook !!}</td>
+                    <td>{{ $getBook->author_name }}</td>
+                    <td><a href="#" title="{{ $getBook->book_pdf }}">{{ $getBook->shortPdf }}</a></td>
+                    @if(is_null($getBook->book_image))
                     <td>No Image</td>
                     @else
-                    <td class="center"><img src="{{ asset('images/content/' . $getContent->content_image) }}" width="50" height="50"></td>
+                    <td class="center"><img src="{{ asset('images/books/' . $getBook->book_image) }}" width="50" height="50"></td>
                     @endif
-                    <td>{{ $getContent->category }}</td>
-                    <td>{{ $getContent->week_no }}</td>
-                    <td>{{ $getContent->first_name }} {{ $getContent->last_name }}</td>
-                    <td class="center"><a href="/trashedContent/{{ $getContent->id }}/edit" id="edit" class="btn btn-md btn-primary mr-2" >Edit</a></td>
+                    <td>{{ $getBook->book_category }}</td>
+                    <td>{{ $getBook->book_cost }}</td>
+                    <td>{{ $getBook->first_name }} {{ $getBook->last_name }}</td>
+                    <td class="center"><a href="/trashedBook/{{ $getBook->id }}/edit" id="edit" class="btn btn-md btn-primary mr-2" >Edit</a></td>
                   </tr>
 
                 </tbody>
                 @empty
-                <h1 style="text-align:center">Course Table is empty</h1>
+                <h1 style="text-align:center">Trahsed Book Table is empty</h1>
                 @endforelse
                 <tfoot>
                   <tr>
                     <th>Id</th>
-                    <th>Course Title</th>
-                    <th>Content Title</th>
-                    <th>Content Details</th>
+                    <th>Book Title</th>
+                    <th>Book Details</th>
+                    <th>Author</th>
                     <th>PDF</th>
-                    <th>Video</th>
                     <th>Image</th>
                     <th>Category</th>
-                    <th>Week No</th>
+                    <th>Cost</th>
                     <th>Admin Editor</th>
                     <th></th>
                   </tr>

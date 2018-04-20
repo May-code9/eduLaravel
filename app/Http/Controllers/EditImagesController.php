@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Image;
+use App\Book;
 use App\Content;
 use App\Course;
 use App\Author;
@@ -110,5 +111,30 @@ class EditImagesController extends Controller
 
       $author->update(['author_image'=>$imagename, 'user_id'=>$user_id]);
       return redirect('/author')->with("success_status", "Author's Image Updated");
+    }
+    public function book($id)
+    {
+      $book = Book::findOrFail($id);
+
+      $activeBooks = "active";
+      return view('admin.layouts.book.editImage', compact('activeBooks', 'book'));
+    }
+    public function post_book(Request $request, $id)
+    {
+      $request->validate([
+        'book_image' => 'required|mimes:jpeg,png|max:1000'
+      ]);
+      $book = Book::findOrFail($id);
+      $photo = $request->file('book_image');
+      $imagename = time().'.'.$photo->getClientOriginalExtension();
+
+      $destinationPath = public_path('/images/books');
+      $thumb_img = Image::make($photo->getRealPath())->resize(600, 600);
+      $thumb_img->save($destinationPath.'/'.$imagename);
+
+      $user_id = $request->input('user_id');
+
+      $book->update(['book_image'=>$imagename, 'user_id'=>$user_id]);
+      return redirect('/book')->with("success_status", "Book Image Updated");
     }
 }

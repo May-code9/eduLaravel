@@ -69,11 +69,11 @@
                     <td>{{ $getContent->course }}</td>
                     <td>{{ $getContent->content_title }}</td>
                     <td>{!! $getContent->shortContent !!}</td>
-                    <td>{{ $getContent->content_pdf }}</td>
+                    <td><a href="#" title="{{ $getContent->content_pdf }}">{{ $getContent->content_pdf }}</a></td>
                     @if(is_null($getContent->content_video))
                     <td>No Video</td>
                     @else
-                    <td><a href="/content/{{ $getContent->id }}/edit">
+                    <td><a href="#">
                       <video width="200" height="150">
                        <source src="{{ asset('video/' . $getContent->content_video) }}" type="video/mp4">
                       </video></a>

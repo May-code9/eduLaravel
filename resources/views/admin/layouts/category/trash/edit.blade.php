@@ -43,31 +43,20 @@
           <!-- general form elements -->
           <div class="box box-warning">
             <div class="box-header">
-              <h3 class="box-title">Restore/Delete Author</h3>
+              <h3 class="box-title">Restore/Delete Book Category</h3>
             </div><!-- /.box-header -->
 
             <!-- form start -->
-            <form method="post" action="/trashedAuthor/{{ $author->id }}" enctype="multipart/form-data">
+            <form method="post" action="/trashedBookCategory/{{ $bookCategory->id }}" enctype="multipart/form-data">
               {{ method_field('PUT') }}
               {{ csrf_field() }}
               <div class="box-body">
-                <div class="form-group{{ $errors->has('author_name') ? ' has-error' : '' }}">
-                  <label>Name of Author</label>
-                  <input type="text" class="form-control" name="author_name" id="author_name" value="{{ $author->author_name }}" placeholder="Enter ..." disabled/>
-                  @if ($errors->has('author_name'))
+                <div class="form-group{{ $errors->has('book_category') ? ' has-error' : '' }}">
+                  <label>Name of Category</label>
+                  <input type="text" class="form-control" name="book_category" id="book_category" value="{{ $bookCategory->book_category }}" placeholder="Enter ..." disabled/>
+                  @if ($errors->has('book_category'))
                   <span class="help-block">
-                    <strong>{{ $errors->first('author_name') }}</strong>
-                  </span>
-                  @endif
-                </div>
-
-                <div class="form-group{{ $errors->has('about_author') ? ' has-error' : '' }}">
-                  <label>About Author</label>
-                  <!-- tools box -->
-                  <textarea id="editor1" name="about_author" placeholder="Enter ..." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" disabled>{{ $author->about_author }}</textarea>
-                  @if ($errors->has('about_author'))
-                  <span class="help-block">
-                    <strong>{{ $errors->first('about_author') }}</strong>
+                    <strong>{{ $errors->first('book_category') }}</strong>
                   </span>
                   @endif
                 </div>
@@ -79,7 +68,7 @@
                 <button type = "submit" class="btn btn-warning btn-lg glyphicon glyphicon-floppy-disk"/>
               </div>
             </form>
-            <form action="/trashedAuthor/{{ $author->id }}" method="POST">
+            <form action="/trashedBookCategory/{{ $bookCategory->id }}" method="POST">
               {{ csrf_field() }}
               {{ method_field('DELETE') }}
 

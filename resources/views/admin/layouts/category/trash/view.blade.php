@@ -21,7 +21,7 @@
       </ol>
     </section>
 
-    <div class="col-md-12" style="padding-left:0px">
+    <div class="col-md-8 col-md-push-2" style="padding-left:0px">
       @if(session('success_status'))
       <div class = "alert alert-success alert-dismissable">
         <i class="fa fa-check"></i>
@@ -40,44 +40,38 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-md-8 col-md-push-2">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Trashed Author(s)</h3>
+              <h3 class="box-title">Trashed Book Category</h3>
             </div><!-- /.box-header -->
             <div class="box-body table-responsive">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
                     <th>Id</th>
-                    <th>Name</th>
-                    <th>Details</th>
-                    <th>Image</th>
+                    <th>Book Category</th>
                     <th>Admin Editor</th>
                     <th></th>
                   </tr>
                 </thead>
-                @forelse($getAuthors as $getAuthor)
+                @forelse($getBookCategories as $getBookCategory)
                 <tbody>
                   <tr>
-                    <td>{{ $getAuthor->id }}</td>
-                    <td>{{ $getAuthor->author_name }}</td>
-                    <td>{!! $getAuthor->shortMessage !!}</td>
-                    <td class="center"><img src="{{ asset('images/authors/' . $getAuthor->author_image) }}" width="50" height="50"></td>
-                    <td>{{ $getAuthor->first_name }} {{ $getAuthor->last_name }}</td>
-                    <td class="center"><a href="/trashedAuthor/{{ $getAuthor->id }}/edit" id="edit" class="btn btn-md btn-primary mr-2" >Edit</a></td>
+                    <td>{{ $getBookCategory->id }}</td>
+                    <td>{{ $getBookCategory->book_category }}</td>
+                    <td>{{ $getBookCategory->first_name }} {{ $getBookCategory->last_name }}</td>
+                    <td class="center"><a href="/trashedBookCategory/{{ $getBookCategory->id }}/edit" id="edit" class="btn btn-md btn-primary mr-2" >Edit</a></td>
                   </tr>
 
                 </tbody>
                 @empty
-                <h1 style="text-align:center">Author Table is empty</h1>
+                <h1 style="text-align:center">Trashed Book Category Table is empty</h1>
                 @endforelse
                 <tfoot>
                   <tr>
                     <th>Id</th>
-                    <th>Name</th>
-                    <th>Details</th>
-                    <th>Image</th>
+                    <th>Book Category</th>
                     <th>Admin Editor</th>
                     <th></th>
                   </tr>

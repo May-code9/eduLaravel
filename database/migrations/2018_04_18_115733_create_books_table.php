@@ -21,6 +21,7 @@ class CreateBooksTable extends Migration
             $table->string('book_pdf');
             $table->string('book_image');
             $table->text('about_book');
+            $table->string('book_cost');
             $table->integer('book_category_id');
             $table->SoftDeletes();
             $table->timestamps();

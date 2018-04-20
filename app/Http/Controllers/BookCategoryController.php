@@ -17,7 +17,7 @@ class BookCategoryController extends Controller
       $activeCategory = "active";
       $getBookCategories = BookCategory::join('users', 'users.id', '=', 'book_categories.user_id')
       ->select('book_categories.id', 'first_name', 'last_name', 'book_category')
-      ->get();
+      ->paginate(5);
       return view('admin.layouts.category.view', compact('activeCategory', 'getBookCategories'));
     }
 

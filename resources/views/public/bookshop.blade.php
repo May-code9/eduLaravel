@@ -27,20 +27,11 @@ Bookshop
           <h4 class="text-left text-bold" style="margin-bottom: 15px">Books Categories</h4>
           <div class="text-subline"></div>
           <ul class="list-inline list-inline-xs block-left text-left pt">
-            <li class="block-display"><a href="#"><span class="text-dark text-bold size-18">Action and Adventure</span></a></li>
-            <li class="block-display"><a href="#"><span class="text-dark text-bold size-18">Art & Poetry</span></a></li>
-            <li class="block-display"><a href="#"><span class="text-dark text-bold size-18">Business & Finance</span></a></li>
-            <li class="block-display"><a href="#"><span class="text-dark text-bold size-18">Drama</span></a></li>
-            <li class="block-display"><a href="#"><span class="text-dark text-bold size-18">Educational</span></a></li>
-            <li class="block-display"><a href="#"><span class="text-dark text-bold size-18">Fiction & Non-Fiction</span></a></li>
-            <li class="block-display"><a href="#"><span class="text-dark text-bold size-18">Health & Living</span></a></li>
-            <li class="block-display"><a href="#"><span class="text-dark text-bold size-18">History</span></a></li>
-            <li class="block-display"><a href="#"><span class="text-dark text-bold size-18">Humor & Entertainment</span></a></li>
-            <li class="block-display"><a href="#"><span class="text-dark text-bold size-18">Mystery & Thrillers</span></a></li>
-            <li class="block-display"><a href="#"><span class="text-dark text-bold size-18">Romance</span></a></li>
-            <li class="block-display"><a href="#"><span class="text-dark text-bold size-18">Science Fiction</span></a></li>
-            <li class="block-display"><a href="#"><span class="text-dark text-bold size-18">Spirituality & Beliefs</span></a></li>
-            <li class="block-display"><a href="#"><span class="text-dark text-bold size-18">Textbooks</span></a></li>
+            @forelse($getBookCategories as $getBookCategory)
+            <li class="block-display"><a href="#"><span class="text-dark text-bold size-18">{{ $getBookCategory }}</span></a></li>
+            @empty
+            <h1>No Book Category Yet</h1>
+            @endforelse
           </ul>
         </div>
       </div>
@@ -75,59 +66,18 @@ Bookshop
 
         <!-- <div class="offset-top-10 range range-xs-center"> -->
           <div class="range range-lg-condensed offset-top-20 range-xs-center section-products">
-            <div class="cell-xs-10 cell-lg-3 cell-sm-6 cell-md-4">
-              <div class="product">
-                <div class="product-body"><img src="images/product-06-225x225.jpg" alt="" class="img-responsive reveal-inline-block" width="225" height="225">
-                  <hr style="margin-top:10px; margin-bottom:10px">
-                  <h6 class="text-bold size-14">Strategy: <span class="size-13 purple">Austine Clark</span></h6>
-                  <hr style="margin-top:10px; margin-bottom:10px">
-                  <h6 class="text-bold size-14 purple">$1000</h6>
-                  <hr style="margin-top:10px; margin-bottom:10px">
-                  <div class="offset-top-5">
-                    <p class="text-primary size-12 just"><a href="single-product.php">Customized Trio Stylus Pen with LED Light Customized Trio Stylus Pen with LED Light</a></p>
-                  </div>
-                </div>
-                <div class="product-meta-info">
-                  <ul class="list-inline list-inline-dark list-inline-lg">
-                    <li class="li-btn"><a href="#" class="btn btn-sm btn-madison btn-icon-left btn-pad-sm"><span>Preview</span></a></li>
-                    <li class="li-btn"><a href="#" class="btn btn-sm btn-primary btn-icon-left btn-pad-sm"><span>Save</span></a></li>
-                    <li class="li-btn"><a href="#" class="btn btn-sm btn-madison btn-icon-left btn-pad-sm"><span>Buy</span></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="cell-xs-10 cell-lg-3 cell-sm-6 cell-md-4 offset-top-30 offset-sm-top-0">
-              <div class="product">
-                <div class="product-body"><img src="images/product-06-225x225.jpg" alt="" class="img-responsive reveal-inline-block" width="225" height="225">
-                  <hr style="margin-top:10px; margin-bottom:10px">
-                  <h6 class="text-bold size-14">Strategy: <span class="size-13 purple">Austine Clark</span></h6>
-                  <hr style="margin-top:10px; margin-bottom:10px">
-                  <h6 class="text-bold size-14 purple">$1000</h6>
-                  <hr style="margin-top:10px; margin-bottom:10px">
-                  <div class="offset-top-5">
-                    <p class="text-primary size-12 just"><a href="single-product.php">Customized Trio Stylus Pen with LED Light Customized Trio Stylus Pen with LED Light</a></p>
-                  </div>
-                </div>
-                <div class="product-meta-info">
-                  <ul class="list-inline list-inline-dark list-inline-lg">
-                    <li class="li-btn"><a href="#" class="btn btn-sm btn-madison btn-icon-left btn-pad-sm"><span>Preview</span></a></li>
-                    <li class="li-btn"><a href="#" class="btn btn-sm btn-primary btn-icon-left btn-pad-sm"><span>Save</span></a></li>
-                    <li class="li-btn"><a href="#" class="btn btn-sm btn-madison btn-icon-left btn-pad-sm"><span>Buy</span></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            @forelse($getNewReleases as $getNewRelease)
             <div class="cell-xs-10 cell-lg-3 cell-sm-6 cell-md-4 offset-top-30 offset-md-top-0">
               <div class="product">
-                <div class="product-body"><img src="images/product-06-225x225.jpg" alt="" class="img-responsive reveal-inline-block" width="225" height="225">
+                <div class="product-body"><img src="{{ asset('images/books/' . $getNewRelease->book_image) }}" alt="" class="img-responsive reveal-inline-block" width="225" height="225">
                   <hr style="margin-top:10px; margin-bottom:10px">
-                  <h6 class="text-bold size-14">Strategy: <span class="size-13 purple">Austine Clark</span></h6>
+                  <h6 class="text-bold size-14">{{ $getNewRelease->book_name }} </h6>
                   <hr style="margin-top:10px; margin-bottom:10px">
-                  <h6 class="text-bold size-14 purple">$1000</h6>
+                  <h6 class="size-13 purple">{{ $getNewRelease->author_name }}</h6>
                   <hr style="margin-top:10px; margin-bottom:10px">
-                  <div class="offset-top-5">
-                    <p class="text-primary size-12 just"><a href="single-product.php">Customized Trio Stylus Pen with LED Light Customized Trio Stylus Pen with LED Light</a></p>
-                  </div>
+                  <h6 class="text-bold size-14 purple">₦ {{ $getNewRelease->book_cost }}</h6>
+                  <hr style="margin-top:10px; margin-bottom:10px">
+
                 </div>
                 <div class="product-meta-info">
                   <ul class="list-inline list-inline-dark list-inline-lg">
@@ -138,27 +88,9 @@ Bookshop
                 </div>
               </div>
             </div>
-            <div class="cell-xs-10 cell-lg-3 cell-sm-6 cell-md-4 offset-top-30 offset-lg-top-0">
-              <div class="product">
-                <div class="product-body"><img src="images/product-06-225x225.jpg" alt="" class="img-responsive reveal-inline-block" width="225" height="225">
-                  <hr style="margin-top:10px; margin-bottom:10px">
-                  <h6 class="text-bold size-14">Strategy: <span class="size-13 purple">Austine Clark</span></h6>
-                  <hr style="margin-top:10px; margin-bottom:10px">
-                  <h6 class="text-bold size-14 purple">$1000</h6>
-                  <hr style="margin-top:10px; margin-bottom:10px">
-                  <div class="offset-top-5">
-                    <p class="text-primary size-12 just"><a href="single-product.php">Customized Trio Stylus Pen with LED Light Customized Trio Stylus Pen with LED Light</a></p>
-                  </div>
-                </div>
-                <div class="product-meta-info">
-                  <ul class="list-inline list-inline-dark list-inline-lg">
-                    <li class="li-btn"><a href="#" class="btn btn-sm btn-madison btn-icon-left btn-pad-sm"><span>Preview</span></a></li>
-                    <li class="li-btn"><a href="#" class="btn btn-sm btn-primary btn-icon-left btn-pad-sm"><span>Save</span></a></li>
-                    <li class="li-btn"><a href="#" class="btn btn-sm btn-madison btn-icon-left btn-pad-sm"><span>Buy</span></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            @empty
+            <h1>No Book Yet</h1>
+            @endforelse
           </div>
         <!-- </div> -->
         <div class="offset-top-20" style="text-align: right;">

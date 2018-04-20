@@ -19,7 +19,7 @@ Route::get('/classroom', ['as'=>'edu_courses', 'uses'=>'PublicCourseController@c
 Route::get('/courses/{id}', ['as'=>'edu_icourse', 'uses'=>'PublicCourseController@icourse'])->middleware('login');
 Route::post('/takeCourse/{id}', ['as'=>'take.course', 'uses'=>'PublicCourseController@take_course'])->middleware('login');
 Route::get('/courses/{id}/{weekNo}/{contentId}', ['as'=>'edu_icourse', 'uses'=>'PublicCourseController@courseContent'])->middleware('login');
-Route::get('/bookshop', ['as'=>'edu_bookshop', 'uses'=>'EduController@bookshop']);
+Route::get('/bookshop', ['as'=>'edu_bookshop', 'uses'=>'PublicBookController@bookshop']);
 Route::get('/contact', ['as'=>'edu_contact', 'uses'=>'EduController@contact']);
 Route::get('/comingSoon', ['as'=>'coming_soon', 'uses'=>'EduController@coming']);
 
@@ -69,7 +69,15 @@ Route::group(['middleware' => 'admin'], function() {
     Route::get('/edit Author Image/{id}', ['as'=>'edit.author.image', 'uses'=>'EditImagesController@author']);
     Route::post('/edit Author Image/{id}', ['as'=>'edit.author.image', 'uses'=>'EditImagesController@post_author']);
 
+    //Book Category
+    Route::resource('bookCategory', 'BookCategoryController');
+    Route::resource('trashedBookCategory', 'BookCategoryTrashed');
+
     //Books
     Route::resource('book', 'BookController');
-    Route::resource('bookCategory', 'BookCategoryController');
+    Route::resource('trashedBook', 'BookTrashed');
+    Route::get('/edit Book Image/{id}', ['as'=>'edit.book.image', 'uses'=>'EditImagesController@book']);
+    Route::post('/edit Book Image/{id}', ['as'=>'edit.book.image', 'uses'=>'EditImagesController@post_book']);
+    Route::get('/edit Book Pdf/{id}', ['as'=>'edit.book.pdf', 'uses'=>'EditPdfController@book']);
+    Route::post('/edit Book Pdf/{id}', ['as'=>'edit.book.pdf', 'uses'=>'EditPdfController@post_book']);
 });

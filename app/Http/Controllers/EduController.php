@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Week;
 use App\Course;
 use App\Content;
+use App\BookCategory;
 
 class EduController extends Controller
 {
@@ -24,9 +25,5 @@ class EduController extends Controller
     public function coming() {
       return view('public.coming-soon');
     }
-    public function bookshop()
-    {
-      $bookshopActive = "active";
-      return view('public.bookshop', compact('bookshopActive'));
-    }
+    
 }

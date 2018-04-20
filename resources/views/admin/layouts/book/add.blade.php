@@ -60,7 +60,7 @@
                   @endif
                 </div>
 
-                <div class="form-group{{ $errors->has('week_no') ? ' has-error' : '' }}">
+                <div class="form-group{{ $errors->has('author_name') ? ' has-error' : '' }}">
                   <label>Author</label>
                   <select type="text" class="form-control" name="author_id" id="author_id" required>
                     <option value="">Select the Author's Name</option>
@@ -86,7 +86,7 @@
                   @endif
                 </div>
 
-                <div class="form-group{{ $errors->has('book_category_id') ? ' has-error' : '' }}">
+                <div class="form-group{{ $errors->has('book_category_id') ? ' has-error' : '' }} col-md-6">
                   <label>Book Category</label>
                   <select type="text" class="form-control" name="book_category_id" id="book_category_id" required>
                     <option value="">Select the Book Category</option>
@@ -97,6 +97,16 @@
                   @if ($errors->has('book_category_id'))
                   <span class="help-block">
                     <strong>{{ $errors->first('book_category_id') }}</strong>
+                  </span>
+                  @endif
+                </div>
+
+                <div class="form-group{{ $errors->has('book_cost') ? ' has-error' : '' }} col-md-6">
+                  <label>Book Cost</label>
+                  <input type="text" name="book_cost" class="form-control" placeholder="Enter..." required/>
+                  @if ($errors->has('book_cost'))
+                  <span class="help-block">
+                    <strong>{{ $errors->first('book_cost') }}</strong>
                   </span>
                   @endif
                 </div>
@@ -114,10 +124,10 @@
                   @endif
                 </div>
 
-                <div class="form-group{{ $errors->has('book_image') ? ' has-error' : '' }}" style="display: none">
+                <div class="form-group{{ $errors->has('book_image') ? ' has-error' : '' }}">
                   <label>Book Image</label>
                   <input type="file" name="book_image" value="{{ old('book_image') }}">
-                  <p style="padding-left:10px">Image ratio (width/height): 2.0 or It's Equivalent Ratio</p>
+                  <p style="padding-left:10px">Image ratio (width/height): 1.0 or It's Equivalent Ratio</p>
                   @if ($errors->has('book_image'))
                   <span class="help-block">
                     <strong>{{ $errors->first('book_image') }}</strong>
