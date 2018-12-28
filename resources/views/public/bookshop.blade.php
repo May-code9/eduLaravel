@@ -81,7 +81,7 @@ Bookshop
                 </div>
                 <div class="product-meta-info">
                   <ul class="list-inline list-inline-dark list-inline-lg">
-                    <li class="li-btn"><a href="#" class="btn btn-sm btn-madison btn-icon-left btn-pad-sm"><span>Preview</span></a></li>
+                    <li class="li-btn"><a href="{{ route('edu_ibook') }}" class="btn btn-sm btn-madison btn-icon-left btn-pad-sm"><span>Preview</span></a></li>
                     <li class="li-btn"><a href="#" class="btn btn-sm btn-primary btn-icon-left btn-pad-sm"><span>Save</span></a></li>
                     <li class="li-btn"><a href="#" class="btn btn-sm btn-madison btn-icon-left btn-pad-sm"><span>Buy</span></a></li>
                   </ul>

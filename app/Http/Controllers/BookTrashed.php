@@ -99,6 +99,7 @@ class BookTrashed extends Controller
      */
     public function destroy($id)
     {
-        //
+      $book = Book::withTrashed()->findOrFail($id)->forceDelete();
+      return redirect('/trashedBook')->with("failure_status", "Book Deleted");
     }
 }

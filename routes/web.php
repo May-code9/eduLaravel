@@ -20,6 +20,7 @@ Route::get('/courses/{id}', ['as'=>'edu_icourse', 'uses'=>'PublicCourseControlle
 Route::post('/takeCourse/{id}', ['as'=>'take.course', 'uses'=>'PublicCourseController@take_course'])->middleware('login');
 Route::get('/courses/{id}/{weekNo}/{contentId}', ['as'=>'edu_icourse', 'uses'=>'PublicCourseController@courseContent'])->middleware('login');
 Route::get('/bookshop', ['as'=>'edu_bookshop', 'uses'=>'PublicBookController@bookshop']);
+Route::get('/ibook', ['as'=>'edu_ibook', 'uses'=>'PublicBookController@ibook']);
 Route::get('/contact', ['as'=>'edu_contact', 'uses'=>'EduController@contact']);
 Route::get('/comingSoon', ['as'=>'coming_soon', 'uses'=>'EduController@coming']);
 

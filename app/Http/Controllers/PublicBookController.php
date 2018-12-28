@@ -16,4 +16,9 @@ class PublicBookController extends Controller
       ->get();
       return view('public.bookshop', compact('bookshopActive', 'getBookCategories', 'getNewReleases'));
     }
+    public function ibook()
+    {
+      $bookshopActive = "active";
+      return view('public.ibook', compact('bookshopActive'));
+    }
 }
